@@ -4,7 +4,7 @@ import {
   type BaseGeneratedSchema,
   type GQtyClient,
   type RetryOptions,
-} from 'gqty';
+} from 'pgqty';
 import * as React from 'react';
 import { type ReactClientOptionsWithDefaults } from '../utils';
 
@@ -24,7 +24,9 @@ export interface UseRefetchOptions {
 }
 
 export interface UseRefetch<TSchema extends BaseGeneratedSchema> {
-  (refetchOptions?: UseRefetchOptions): (<T = void>(
+  (
+    refetchOptions?: UseRefetchOptions
+  ): (<T = void>(
     refetchArg?: T | ((query: TSchema['query']) => T)
   ) => Promise<T | undefined>) &
     UseRefetchState;

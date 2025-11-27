@@ -2,14 +2,14 @@
  * GQty: You can safely modify this file based on your needs.
  */
 
-import { createSolidClient } from '@gqty/solid';
+import { createSolidClient } from '@pgqty/solid';
 import {
   Cache,
   createClient,
   defaultResponseHandler,
   GQtyError,
   type QueryFetcher,
-} from 'gqty';
+} from 'pgqty';
 import {
   type GeneratedSchema,
   generatedSchema,

@@ -14,10 +14,10 @@
     "noUnusedParameters": true,
     "outDir": "dist",
     "paths": {
-      "@gqty/cli": ["packages/cli/src/index.ts"],
-      "@gqty/cli/*": ["packages/cli/src/*"],
-      "gqty": ["packages/gqty/src/index.ts"],
-      "gqty/*": ["packages/gqty/src/*"],
+      "@pgqty/cli": ["packages/cli/src/index.ts"],
+      "@pgqty/cli/*": ["packages/cli/src/*"],
+      "pgqty": ["packages/gqty/src/index.ts"],
+      "pgqty/*": ["packages/gqty/src/*"],
       "test-utils": ["internal/test-utils/src/index.ts"]
     },
     "resolveJsonModule": true,

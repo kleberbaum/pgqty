@@ -3,7 +3,7 @@ import {
   type LegacySelection as Selection,
   type LegacySubscribeEvents as SubscribeEvents,
   type LegacySubscriptionsClient as SubscriptionsClient,
-} from 'gqty';
+} from 'pgqty';
 import {
   Client,
   type ClientOptions,

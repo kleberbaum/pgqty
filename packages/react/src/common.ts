@@ -9,7 +9,7 @@ import {
   selectFields,
   type FetchOptions,
   type GQtyError,
-} from 'gqty';
+} from 'pgqty';
 import * as React from 'react';
 
 export const IS_BROWSER = typeof window !== 'undefined';

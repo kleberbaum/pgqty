@@ -11,7 +11,7 @@ import {
   type GQtyClient,
   type GeneratedSchemaObject,
   type RetryOptions,
-} from 'gqty';
+} from 'pgqty';
 import { MultiDict } from 'multidict';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ModifiedSet from '../ModifiedSet';

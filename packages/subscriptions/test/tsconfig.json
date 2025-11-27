@@ -5,8 +5,8 @@
     "jsx": "react",
     "module": "commonjs",
     "paths": {
-      "gqty": ["../../gqty/src/index.ts"],
-      "gqty/*": ["../../gqty/src/*"]
+      "pgqty": ["../../gqty/src/index.ts"],
+      "pgqty/*": ["../../gqty/src/*"]
     },
     "strict": true,
     "target": "es2019"

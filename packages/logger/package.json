@@ -1,11 +1,11 @@
 {
-  "name": "@gqty/logger",
+  "name": "@pgqty/logger",
   "version": "3.0.6",
   "description": "A debug logger for GQty",
-  "homepage": "https://gqty.dev",
+  "homepage": "https://github.com/kleberbaum/pgqty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gqty-dev/gqty.git"
+    "url": "https://github.com/kleberbaum/pgqty.git"
   },
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
@@ -47,13 +47,13 @@
   "devDependencies": {
     "@types/node": "^22.13.4",
     "bob-esbuild-cli": "^4.0.0",
-    "gqty": "workspace:^",
     "jest": "^29.7.0",
+    "pgqty": "workspace:^",
     "test-utils": "workspace:^",
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
-    "gqty": "workspace:^3.4.1"
+    "pgqty": "workspace:^3.4.1"
   },
   "engines": {
     "node": "^12.20.0 || >=14.13.0"

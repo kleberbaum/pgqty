@@ -2,13 +2,13 @@
  * GQty: You can safely modify this file based on your needs.
  */
 
-import { createLogger } from '@gqty/logger';
+import { createLogger } from '@pgqty/logger';
 import {
   Cache,
   createClient,
   defaultResponseHandler,
   type QueryFetcher,
-} from 'gqty';
+} from 'pgqty';
 import {
   type GeneratedSchema,
   generatedSchema,

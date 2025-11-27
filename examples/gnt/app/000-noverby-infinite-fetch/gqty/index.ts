@@ -1,7 +1,7 @@
-import { createReactClient } from '@gqty/react';
+import { createReactClient } from '@pgqty/react';
 import { NhostClient } from '@nhost/nextjs';
-import type { QueryFetcher } from 'gqty';
-import { Cache, createClient } from 'gqty';
+import type { QueryFetcher } from 'pgqty';
+import { Cache, createClient } from 'pgqty';
 import { createClient as createSubscriptionsClient } from 'graphql-ws';
 import type { GeneratedSchema } from './schema.generated';
 import { generatedSchema, scalarsEnumsHash } from './schema.generated';
@@ -18,14 +18,14 @@ const getHeaders = (): Record<string, string> =>
         'x-hasura-admin-secret': process.env.HASURA_GRAPHQL_ADMIN_SECRET,
       }
     : nhost.auth.isAuthenticated()
-    ? {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${nhost.auth.getAccessToken()}`,
-      }
-    : {
-        'Content-Type': 'application/json',
-        'x-hasura-role': 'public',
-      };
+      ? {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${nhost.auth.getAccessToken()}`,
+        }
+      : {
+          'Content-Type': 'application/json',
+          'x-hasura-role': 'public',
+        };
 
 const url = `https://${process.env.NEXT_PUBLIC_NHOST_SUBDOMAIN}.hasura.${process.env.NEXT_PUBLIC_NHOST_REGION}.nhost.run/v1/graphql`;
 
@@ -107,7 +107,7 @@ export const {
 export * from './schema.generated';
 
 if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
-  import('@gqty/logger').then(({ createLogger }) => {
+  import('@pgqty/logger').then(({ createLogger }) => {
     const logger = createLogger(client);
     logger.start();
   });

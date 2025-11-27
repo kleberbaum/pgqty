@@ -30,7 +30,7 @@ describe('array accessors', () => {
       switch (n) {
         case 1:
           return expect(message).toMatchInlineSnapshot(
-            `"[gqty] Warning! No data requested."`
+            `"[pgqty] Warning! No data requested."`
           );
         default:
           throw Error('Unexpected warn: ' + message);
@@ -96,7 +96,7 @@ describe('accessor undefined paths', () => {
       switch (n) {
         case 1:
           return expect(message).toMatchInlineSnapshot(
-            `"[gqty] Warning! No data requested."`
+            `"[pgqty] Warning! No data requested."`
           );
         default:
           throw Error('Unexpected warn: ' + message);

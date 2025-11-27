@@ -27,7 +27,7 @@ export async function inspectWriteGenerate({
   endpoint?: string;
   /**
    * File path destination
-   * @example './src/gqty/index.ts'
+   * @example './src/pgqty/index.ts'
    */
   destination?: string;
   /**
@@ -72,7 +72,7 @@ export async function inspectWriteGenerate({
     } else {
       console.error(
         `\nPlease modify "${
-          filepath.endsWith('package.json') ? 'gqty' : 'config'
+          filepath.endsWith('package.json') ? 'pgqty' : 'config'
         }.introspection.endpoint" in: "${filepath}".`
       );
       throw Error(

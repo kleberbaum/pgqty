@@ -1,5 +1,5 @@
 import { debounceMicrotask } from 'debounce-microtasks';
-import { prepass, type BaseGeneratedSchema, type Client } from 'gqty';
+import { prepass, type BaseGeneratedSchema, type Client } from 'pgqty';
 import createDeferred from 'p-defer';
 import {
   batch,

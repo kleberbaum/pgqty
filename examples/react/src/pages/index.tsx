@@ -1,5 +1,5 @@
 import { Button, HStack, Stack, Text } from '@chakra-ui/react';
-import { selectFields } from 'gqty';
+import { selectFields } from 'pgqty';
 import { FunctionComponent, Suspense, useReducer } from 'react';
 import {
   graphql,

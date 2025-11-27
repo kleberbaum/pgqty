@@ -1,4 +1,4 @@
-# @gqty/solid
+# @pgqty/solid
 
 ## 0.2.3
 

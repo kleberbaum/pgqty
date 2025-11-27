@@ -3617,7 +3617,7 @@ export interface uuid_comparison_exp {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 }
 
-export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
+export const scalarsEnumsHash: import('pgqty').ScalarsEnumsHash = {
   Boolean: true,
   Float: true,
   Int: true,
@@ -3662,10 +3662,8 @@ export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
   jsonb: true,
   members_constraint: true,
   members_select_column: true,
-  members_select_column_members_aggregate_bool_exp_bool_and_arguments_columns:
-    true,
-  members_select_column_members_aggregate_bool_exp_bool_or_arguments_columns:
-    true,
+  members_select_column_members_aggregate_bool_exp_bool_and_arguments_columns: true,
+  members_select_column_members_aggregate_bool_exp_bool_or_arguments_columns: true,
   members_update_column: true,
   mimes_constraint: true,
   mimes_select_column: true,
@@ -3678,10 +3676,8 @@ export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
   order_by: true,
   permissions_constraint: true,
   permissions_select_column: true,
-  permissions_select_column_permissions_aggregate_bool_exp_bool_and_arguments_columns:
-    true,
-  permissions_select_column_permissions_aggregate_bool_exp_bool_or_arguments_columns:
-    true,
+  permissions_select_column_permissions_aggregate_bool_exp_bool_and_arguments_columns: true,
+  permissions_select_column_permissions_aggregate_bool_exp_bool_or_arguments_columns: true,
   permissions_update_column: true,
   relations_constraint: true,
   relations_select_column: true,

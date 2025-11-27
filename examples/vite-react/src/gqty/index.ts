@@ -2,9 +2,9 @@
  * GQty: You can safely modify this file based on your needs.
  */
 
-import { createReactClient } from '@gqty/react';
-import type { QueryFetcher } from 'gqty';
-import { Cache, createClient, defaultResponseHandler } from 'gqty';
+import { createReactClient } from '@pgqty/react';
+import type { QueryFetcher } from 'pgqty';
+import { Cache, createClient, defaultResponseHandler } from 'pgqty';
 import type { GeneratedSchema } from './schema.generated';
 import { generatedSchema, scalarsEnumsHash } from './schema.generated';
 

@@ -3,7 +3,7 @@ import {
   type BaseGeneratedSchema,
   type GQtyClient,
   type RetryOptions,
-} from 'gqty';
+} from 'pgqty';
 import * as React from 'react';
 import {
   translateFetchPolicy,
@@ -97,7 +97,7 @@ export interface UseLazyQuery<GeneratedSchema extends BaseGeneratedSchema> {
               args?: TArgs;
               fetchPolicy?: LazyFetchPolicy;
               operationName?: string;
-            }?
+            }?,
           ]
         : [
             {
@@ -105,10 +105,10 @@ export interface UseLazyQuery<GeneratedSchema extends BaseGeneratedSchema> {
               args: TArgs;
               fetchPolicy?: LazyFetchPolicy;
               opertionName?: string;
-            }
+            },
           ]
     ) => Promise<TData>,
-    UseLazyQueryState<TData>
+    UseLazyQueryState<TData>,
   ];
 }
 
@@ -149,7 +149,7 @@ export function createUseLazyQuery<TSchema extends BaseGeneratedSchema>(
       InitUseLazyQueryReducer
     ) as [
       UseLazyQueryState<TData>,
-      React.Dispatch<UseLazyQueryReducerAction<TData>>
+      React.Dispatch<UseLazyQueryReducerAction<TData>>,
     ];
 
     if (suspense) {

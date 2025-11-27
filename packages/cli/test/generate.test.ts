@@ -44,7 +44,7 @@ test('basic functionality works', async () => {
 
     // This should be included
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -84,8 +84,8 @@ test('basic functionality works', async () => {
       mutation: {},
       query: {
         __typename: { __type: 'String!' },
-        deprecatedArg: { __type: 'Int', __args: { arg: 'Int' } },
         hello: { __type: 'String!' },
+        deprecatedArg: { __type: 'Int', __args: { arg: 'Int' } },
       },
       subscription: {},
     } as const;
@@ -100,6 +100,10 @@ test('basic functionality works', async () => {
     export interface Query {
       __typename?: 'Query';
       /**
+       * Hello field
+       */
+      hello: ScalarsEnums['String'];
+      /**
        * @deprecated No longer supported
        */
       deprecatedArg: (args?: {
@@ -108,10 +112,6 @@ test('basic functionality works', async () => {
          */
         arg?: Maybe<ScalarsEnums['Int']>;
       }) => Maybe<ScalarsEnums['Int']>;
-      /**
-       * Hello field
-       */
-      hello: ScalarsEnums['String'];
     }
 
     export interface Subscription {
@@ -129,6 +129,52 @@ test('basic functionality works', async () => {
         ? Scalars[Key]['output']
         : never;
     } & {};
+
+    /**
+     * Contains code for parameter to argument conversion.
+     */
+
+    export interface QueryTypes {
+      deprecatedArg: {
+        params: [arg?: Maybe<ScalarsEnums['Int']>];
+        return: Maybe<ScalarsEnums['Int']>;
+      };
+    }
+
+    export const QueryParamNames = {
+      deprecatedArg: ['arg'],
+    };
+
+    export function convertParamsToArgsFn<T>(
+      argNames: string[],
+      params: unknown[]
+    ): T {
+      const result: Record<string, unknown> = {};
+
+      argNames.forEach((key, index) => {
+        const value = params[index];
+        // Only set the property if it's not undefined
+        if (value !== undefined) {
+          result[key] = value;
+        }
+      });
+
+      return result as T;
+    }
+
+    export const convertParamsToArgs = {
+      Mutation: {},
+      Query: {
+        deprecatedArg(
+          params: QueryTypes['deprecatedArg']['params']
+        ): Parameters<Query['deprecatedArg']>[0] {
+          return convertParamsToArgsFn<Parameters<Query['deprecatedArg']>[0]>(
+            QueryParamNames['deprecatedArg'],
+            params
+          );
+        },
+      },
+    };
     "
   `);
 
@@ -137,15 +183,15 @@ test('basic functionality works', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import { createClient as createSubscriptionsClient } from 'graphql-ws';
     import {
       Cache,
       createClient,
       defaultResponseHandler,
       type QueryFetcher,
-    } from 'gqty';
+    } from 'pgqty';
     import {
       generatedSchema,
       scalarsEnumsHash,
@@ -256,14 +302,14 @@ test('basic functionality works', async () => {
         "__typename": {
           "__type": "String!"
         },
+        "hello": {
+          "__type": "String!"
+        },
         "deprecatedArg": {
           "__type": "Int",
           "__args": {
             "arg": "Int"
           }
-        },
-        "hello": {
-          "__type": "String!"
         }
       },
       "mutation": {},
@@ -273,9 +319,9 @@ test('basic functionality works', async () => {
 
   expect(JSON.stringify(scalarsEnumsHash, null, 2)).toMatchInlineSnapshot(`
     "{
-      "Boolean": true,
+      "String": true,
       "Int": true,
-      "String": true
+      "Boolean": true
     }"
   `);
 
@@ -315,14 +361,14 @@ test('custom scalars works', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import {
       Cache,
       createClient,
       defaultResponseHandler,
       type QueryFetcher,
-    } from 'gqty';
+    } from 'pgqty';
     import {
       generatedSchema,
       scalarsEnumsHash,
@@ -417,7 +463,7 @@ test('custom scalars works', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -484,6 +530,32 @@ test('custom scalars works', async () => {
         ? Scalars[Key]['output']
         : never;
     } & {};
+
+    /**
+     * Contains code for parameter to argument conversion.
+     */
+
+    export function convertParamsToArgsFn<T>(
+      argNames: string[],
+      params: unknown[]
+    ): T {
+      const result: Record<string, unknown> = {};
+
+      argNames.forEach((key, index) => {
+        const value = params[index];
+        // Only set the property if it's not undefined
+        if (value !== undefined) {
+          result[key] = value;
+        }
+      });
+
+      return result as T;
+    }
+
+    export const convertParamsToArgs = {
+      Mutation: {},
+      Query: {},
+    };
     "
   `);
 
@@ -504,8 +576,8 @@ test('custom scalars works', async () => {
 
   expect(JSON.stringify(scalarsEnumsHash, null, 2)).toMatchInlineSnapshot(`
     "{
-      "Boolean": true,
       "Custom": true,
+      "Boolean": true,
       "String": true
     }"
   `);
@@ -603,7 +675,7 @@ describe('feature complete app', () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { SchemaUnionsKey, type ScalarsEnumsHash } from 'gqty';
+      import { SchemaUnionsKey, type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -637,26 +709,26 @@ describe('feature complete app', () => {
 
       /** Greetings Enum */
       export enum GreetingsEnum {
-        /** @deprecated Field no longer supported */
-        Bye = 'Bye',
         /** Hello */
         Hello = 'Hello',
-        /** Hey */
-        Hey = 'Hey',
         /** Hi */
         Hi = 'Hi',
+        /** Hey */
+        Hey = 'Hey',
+        /** @deprecated Field no longer supported */
+        Bye = 'Bye',
+      }
+
+      export enum OtherEnum {
+        Other = 'Other',
       }
 
       /** Greetings Input */
       export interface GreetingsInput {
         /** Language */
         language: Scalars['String']['input'];
-        scal?: InputMaybe<Scalars['ExampleScalar']['input']>;
         value?: InputMaybe<Scalars['String']['input']>;
-      }
-
-      export enum OtherEnum {
-        Other = 'Other',
+        scal?: InputMaybe<Scalars['ExampleScalar']['input']>;
       }
 
       export const scalarsEnumsHash: ScalarsEnumsHash = {
@@ -670,15 +742,15 @@ describe('feature complete app', () => {
       export const generatedSchema = {
         GreetingsInput: {
           language: { __type: 'String!' },
-          scal: { __type: 'ExampleScalar' },
           value: { __type: 'String' },
+          scal: { __type: 'ExampleScalar' },
         },
         Human: {
           __typename: { __type: 'String!' },
-          father: { __type: 'Human!' },
-          fieldWithArgs: { __type: 'Int!', __args: { id: 'Int!' } },
           name: { __type: 'String!' },
           other: { __type: 'String' },
+          father: { __type: 'Human!' },
+          fieldWithArgs: { __type: 'Int!', __args: { id: 'Int!' } },
           withArgs: { __type: 'Int', __args: { a: 'Int!', b: 'Int' } },
           withArgs2: { __type: 'Int!', __args: { a: 'Int' } },
         },
@@ -695,9 +767,9 @@ describe('feature complete app', () => {
           __typename: { __type: 'String!' },
           name: { __type: 'String!' },
           other: { __type: 'String' },
-          otherHumanStyle: { __type: 'String!' },
           withArgs: { __type: 'Int', __args: { a: 'Int!', b: 'Int' } },
           withArgs2: { __type: 'Int!', __args: { a: 'Int' } },
+          otherHumanStyle: { __type: 'String!' },
         },
         mutation: {
           __typename: { __type: 'String!' },
@@ -705,36 +777,36 @@ describe('feature complete app', () => {
         },
         query: {
           __typename: { __type: 'String!' },
-          arrayObjectArgs: { __type: '[Human!]!', __args: { limit: 'Int' } },
-          arrayString: { __type: '[String!]!' },
-          enumsInput: {
-            __type: 'GreetingsEnum',
-            __args: {
-              notNullableEnum: 'GreetingsEnum!',
-              nullableEnum: 'GreetingsEnum',
-            },
-          },
-          giveGreetingsInput: {
-            __type: 'String!',
-            __args: { input: 'GreetingsInput!' },
-          },
-          greetings: { __type: 'GreetingsEnum!' },
-          humanLike: { __type: 'HumanType!' },
-          namedEntities: { __type: '[NamedEntity!]!' },
-          number: { __type: 'Int!' },
-          object: { __type: 'Human' },
-          objectArray: { __type: '[Human]' },
-          objectWithArgs: { __type: 'Human!', __args: { who: 'String!' } },
           simpleString: { __type: 'String!' },
+          stringWithArgs: { __type: 'String!', __args: { hello: 'String!' } },
           stringNullableWithArgs: {
             __type: 'String',
-            __args: { hello: 'String!', helloThree: 'String!', helloTwo: 'String' },
+            __args: { hello: 'String!', helloTwo: 'String', helloThree: 'String!' },
           },
           stringNullableWithArgsArray: {
             __type: 'String',
             __args: { hello: '[String]!' },
           },
-          stringWithArgs: { __type: 'String!', __args: { hello: 'String!' } },
+          object: { __type: 'Human' },
+          objectArray: { __type: '[Human]' },
+          objectWithArgs: { __type: 'Human!', __args: { who: 'String!' } },
+          arrayString: { __type: '[String!]!' },
+          arrayObjectArgs: { __type: '[Human!]!', __args: { limit: 'Int' } },
+          greetings: { __type: 'GreetingsEnum!' },
+          giveGreetingsInput: {
+            __type: 'String!',
+            __args: { input: 'GreetingsInput!' },
+          },
+          enumsInput: {
+            __type: 'GreetingsEnum',
+            __args: {
+              nullableEnum: 'GreetingsEnum',
+              notNullableEnum: 'GreetingsEnum!',
+            },
+          },
+          number: { __type: 'Int!' },
+          namedEntities: { __type: '[NamedEntity!]!' },
+          humanLike: { __type: 'HumanType!' },
         },
         subscription: {},
         [SchemaUnionsKey]: {
@@ -745,10 +817,10 @@ describe('feature complete app', () => {
 
       export interface Human {
         __typename?: 'Human';
-        father: Human;
-        fieldWithArgs: (args: { id: ScalarsEnums['Int'] }) => ScalarsEnums['Int'];
         name: ScalarsEnums['String'];
         other?: Maybe<ScalarsEnums['String']>;
+        father: Human;
+        fieldWithArgs: (args: { id: ScalarsEnums['Int'] }) => ScalarsEnums['Int'];
         withArgs: (args: {
           a: ScalarsEnums['Int'];
           b?: Maybe<ScalarsEnums['Int']>;
@@ -777,12 +849,12 @@ describe('feature complete app', () => {
         __typename?: 'OtherHuman';
         name: ScalarsEnums['String'];
         other?: Maybe<ScalarsEnums['String']>;
-        otherHumanStyle: ScalarsEnums['String'];
         withArgs: (args: {
           a: ScalarsEnums['Int'];
           b?: Maybe<ScalarsEnums['Int']>;
         }) => Maybe<ScalarsEnums['Int']>;
         withArgs2: (args?: { a?: Maybe<ScalarsEnums['Int']> }) => ScalarsEnums['Int'];
+        otherHumanStyle: ScalarsEnums['String'];
       }
 
       export interface Mutation {
@@ -792,24 +864,24 @@ describe('feature complete app', () => {
 
       export interface Query {
         __typename?: 'Query';
-        arrayObjectArgs: (args?: {
-          /**
-           * @defaultValue \`10\`
-           */
-          limit?: Maybe<ScalarsEnums['Int']>;
-        }) => Array<Human>;
-        arrayString: Array<ScalarsEnums['String']>;
-        enumsInput: (args: {
-          notNullableEnum: GreetingsEnum;
-          nullableEnum?: Maybe<GreetingsEnum>;
-        }) => Maybe<ScalarsEnums['GreetingsEnum']>;
-        giveGreetingsInput: (args: {
-          input: GreetingsInput;
+        simpleString: ScalarsEnums['String'];
+        stringWithArgs: (args: {
+          hello: ScalarsEnums['String'];
         }) => ScalarsEnums['String'];
-        greetings: ScalarsEnums['GreetingsEnum'];
-        humanLike: HumanType;
-        namedEntities: Array<NamedEntity>;
-        number: ScalarsEnums['Int'];
+        stringNullableWithArgs: (args: {
+          hello: ScalarsEnums['String'];
+          /**
+           * @defaultValue \`"Hi"\`
+           */
+          helloTwo?: Maybe<ScalarsEnums['String']>;
+          /**
+           * @defaultValue \`"Hi"\`
+           */
+          helloThree?: Maybe<ScalarsEnums['String']>;
+        }) => Maybe<ScalarsEnums['String']>;
+        stringNullableWithArgsArray: (args: {
+          hello: Array<Maybe<ScalarsEnums['String']>>;
+        }) => Maybe<ScalarsEnums['String']>;
         object?: Maybe<Human>;
         objectArray?: Maybe<Array<Maybe<Human>>>;
         objectWithArgs: (args: {
@@ -818,24 +890,24 @@ describe('feature complete app', () => {
            */
           who: ScalarsEnums['String'];
         }) => Human;
-        simpleString: ScalarsEnums['String'];
-        stringNullableWithArgs: (args: {
-          hello: ScalarsEnums['String'];
+        arrayString: Array<ScalarsEnums['String']>;
+        arrayObjectArgs: (args?: {
           /**
-           * @defaultValue \`"Hi"\`
+           * @defaultValue \`10\`
            */
-          helloThree?: Maybe<ScalarsEnums['String']>;
-          /**
-           * @defaultValue \`"Hi"\`
-           */
-          helloTwo?: Maybe<ScalarsEnums['String']>;
-        }) => Maybe<ScalarsEnums['String']>;
-        stringNullableWithArgsArray: (args: {
-          hello: Array<Maybe<ScalarsEnums['String']>>;
-        }) => Maybe<ScalarsEnums['String']>;
-        stringWithArgs: (args: {
-          hello: ScalarsEnums['String'];
+          limit?: Maybe<ScalarsEnums['Int']>;
+        }) => Array<Human>;
+        greetings: ScalarsEnums['GreetingsEnum'];
+        giveGreetingsInput: (args: {
+          input: GreetingsInput;
         }) => ScalarsEnums['String'];
+        enumsInput: (args: {
+          nullableEnum?: Maybe<GreetingsEnum>;
+          notNullableEnum: GreetingsEnum;
+        }) => Maybe<ScalarsEnums['GreetingsEnum']>;
+        number: ScalarsEnums['Int'];
+        namedEntities: Array<NamedEntity>;
+        humanLike: HumanType;
       }
 
       export interface Subscription {
@@ -865,6 +937,154 @@ describe('feature complete app', () => {
       } & {
         GreetingsEnum: GreetingsEnum;
         OtherEnum: OtherEnum;
+      };
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export interface MutationTypes {
+        increment: {
+          params: [n: ScalarsEnums['Int']];
+          return: ScalarsEnums['Int'];
+        };
+      }
+
+      export interface QueryTypes {
+        stringWithArgs: {
+          params: [hello: ScalarsEnums['String']];
+          return: ScalarsEnums['String'];
+        };
+        stringNullableWithArgs: {
+          params: [
+            hello: ScalarsEnums['String'],
+            helloTwo?: Maybe<ScalarsEnums['String']>,
+            helloThree: ScalarsEnums['String']
+          ];
+          return: Maybe<ScalarsEnums['String']>;
+        };
+        stringNullableWithArgsArray: {
+          params: [hello: Array<Maybe<ScalarsEnums['String']>>];
+          return: Maybe<ScalarsEnums['String']>;
+        };
+        objectWithArgs: {
+          params: [who: ScalarsEnums['String']];
+          return: Human;
+        };
+        arrayObjectArgs: {
+          params: [limit?: Maybe<ScalarsEnums['Int']>];
+          return: Array<Human>;
+        };
+        giveGreetingsInput: {
+          params: [input: GreetingsInput];
+          return: ScalarsEnums['String'];
+        };
+        enumsInput: {
+          params: [
+            nullableEnum?: Maybe<ScalarsEnums['GreetingsEnum']>,
+            notNullableEnum: ScalarsEnums['GreetingsEnum']
+          ];
+          return: Maybe<ScalarsEnums['GreetingsEnum']>;
+        };
+      }
+
+      export const MutationParamNames = {
+        increment: ['n'],
+      };
+      export const QueryParamNames = {
+        stringWithArgs: ['hello'],
+        stringNullableWithArgs: ['hello', 'helloTwo', 'helloThree'],
+        stringNullableWithArgsArray: ['hello'],
+        objectWithArgs: ['who'],
+        arrayObjectArgs: ['limit'],
+        giveGreetingsInput: ['input'],
+        enumsInput: ['nullableEnum', 'notNullableEnum'],
+      };
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {
+          increment(
+            params: MutationTypes['increment']['params']
+          ): Parameters<Mutation['increment']>[0] {
+            return convertParamsToArgsFn<Parameters<Mutation['increment']>[0]>(
+              MutationParamNames['increment'],
+              params
+            );
+          },
+        },
+        Query: {
+          stringWithArgs(
+            params: QueryTypes['stringWithArgs']['params']
+          ): Parameters<Query['stringWithArgs']>[0] {
+            return convertParamsToArgsFn<Parameters<Query['stringWithArgs']>[0]>(
+              QueryParamNames['stringWithArgs'],
+              params
+            );
+          },
+          stringNullableWithArgs(
+            params: QueryTypes['stringNullableWithArgs']['params']
+          ): Parameters<Query['stringNullableWithArgs']>[0] {
+            return convertParamsToArgsFn<
+              Parameters<Query['stringNullableWithArgs']>[0]
+            >(QueryParamNames['stringNullableWithArgs'], params);
+          },
+          stringNullableWithArgsArray(
+            params: QueryTypes['stringNullableWithArgsArray']['params']
+          ): Parameters<Query['stringNullableWithArgsArray']>[0] {
+            return convertParamsToArgsFn<
+              Parameters<Query['stringNullableWithArgsArray']>[0]
+            >(QueryParamNames['stringNullableWithArgsArray'], params);
+          },
+          objectWithArgs(
+            params: QueryTypes['objectWithArgs']['params']
+          ): Parameters<Query['objectWithArgs']>[0] {
+            return convertParamsToArgsFn<Parameters<Query['objectWithArgs']>[0]>(
+              QueryParamNames['objectWithArgs'],
+              params
+            );
+          },
+          arrayObjectArgs(
+            params: QueryTypes['arrayObjectArgs']['params']
+          ): Parameters<Query['arrayObjectArgs']>[0] {
+            return convertParamsToArgsFn<Parameters<Query['arrayObjectArgs']>[0]>(
+              QueryParamNames['arrayObjectArgs'],
+              params
+            );
+          },
+          giveGreetingsInput(
+            params: QueryTypes['giveGreetingsInput']['params']
+          ): Parameters<Query['giveGreetingsInput']>[0] {
+            return convertParamsToArgsFn<Parameters<Query['giveGreetingsInput']>[0]>(
+              QueryParamNames['giveGreetingsInput'],
+              params
+            );
+          },
+          enumsInput(
+            params: QueryTypes['enumsInput']['params']
+          ): Parameters<Query['enumsInput']>[0] {
+            return convertParamsToArgsFn<Parameters<Query['enumsInput']>[0]>(
+              QueryParamNames['enumsInput'],
+              params
+            );
+          },
+        },
       };
       "
     `);
@@ -1127,7 +1347,7 @@ describe('mutation', () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -1198,6 +1418,52 @@ describe('mutation', () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export interface MutationTypes {
+        helloMutation: {
+          params: [hello: ScalarsEnums['String']];
+          return: ScalarsEnums['String'];
+        };
+      }
+
+      export const MutationParamNames = {
+        helloMutation: ['hello'],
+      };
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {
+          helloMutation(
+            params: MutationTypes['helloMutation']['params']
+          ): Parameters<Mutation['helloMutation']>[0] {
+            return convertParamsToArgsFn<Parameters<Mutation['helloMutation']>[0]>(
+              MutationParamNames['helloMutation'],
+              params
+            );
+          },
+        },
+        Query: {},
+      };
       "
     `);
     expect(generatedSchema).toMatchInlineSnapshot(`
@@ -1269,7 +1535,7 @@ describe('subscription', () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -1338,6 +1604,32 @@ describe('subscription', () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {},
+        Query: {},
+      };
       "
     `);
     expect(generatedSchema).toMatchInlineSnapshot(`
@@ -1417,14 +1709,14 @@ test('javascript output works', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import { createClient as createSubscriptionsClient } from 'graphql-ws';
-    import { Cache, createClient, defaultResponseHandler } from 'gqty';
+    import { Cache, createClient, defaultResponseHandler } from 'pgqty';
     import { generatedSchema, scalarsEnumsHash } from './schema.generated';
 
     /**
-     * @type {import("gqty").QueryFetcher}
+     * @type {import("pgqty").QueryFetcher}
      */
     const queryFetcher = async function (
       { query, variables, operationName },
@@ -1475,7 +1767,7 @@ test('javascript output works', async () => {
     );
 
     /**
-     * @type {import("gqty").GQtyClient<import("./schema.generated").GeneratedSchema>}
+     * @type {import("pgqty").GQtyClient<import("./schema.generated").GeneratedSchema>}
      */
     export const client = createClient({
       schema: generatedSchema,
@@ -1516,7 +1808,7 @@ test('javascript output works', async () => {
       useSubscription,
     } =
       /**
-       * @type {import("@gqty/react").ReactClient<import("./schema.generated").GeneratedSchema>}
+       * @type {import("@pgqty/react").ReactClient<import("./schema.generated").GeneratedSchema>}
        */
       createReactClient(client, {
         defaults: {
@@ -1536,10 +1828,10 @@ test('javascript output works', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { SchemaUnionsKey } from 'gqty';
+    import { SchemaUnionsKey } from 'pgqty';
 
     /**
-     * @type {import("gqty").ScalarsEnumsHash}
+     * @type {import("pgqty").ScalarsEnumsHash}
      */
     export const scalarsEnumsHash = { Boolean: true, Int: true, String: true };
 
@@ -1613,7 +1905,7 @@ test('javascript output works', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { SchemaUnionsKey } from 'gqty';
+    import { SchemaUnionsKey } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -1703,6 +1995,32 @@ test('javascript output works', async () => {
         ? Scalars[Key]['output']
         : never;
     } & {};
+
+    /**
+     * Contains code for parameter to argument conversion.
+     */
+
+    export function convertParamsToArgsFn<T>(
+      argNames: string[],
+      params: unknown[]
+    ): T {
+      const result: Record<string, unknown> = {};
+
+      argNames.forEach((key, index) => {
+        const value = params[index];
+        // Only set the property if it's not undefined
+        if (value !== undefined) {
+          result[key] = value;
+        }
+      });
+
+      return result as T;
+    }
+
+    export const convertParamsToArgs = {
+      Mutation: {},
+      Query: {},
+    };
     "
   `);
 });
@@ -1747,14 +2065,14 @@ test('ignoreArgs transform', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import {
       Cache,
       createClient,
       defaultResponseHandler,
       type QueryFetcher,
-    } from 'gqty';
+    } from 'pgqty';
     import {
       generatedSchema,
       scalarsEnumsHash,
@@ -1871,7 +2189,7 @@ test('ignoreArgs transform', async () => {
      */
 
     /**
-     * @type {import("gqty").ScalarsEnumsHash}
+     * @type {import("pgqty").ScalarsEnumsHash}
      */
     export const scalarsEnumsHash = { Boolean: true, Int: true, String: true };
 
@@ -1891,7 +2209,7 @@ test('ignoreArgs transform', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -1965,6 +2283,53 @@ test('ignoreArgs transform', async () => {
         ? Scalars[Key]['output']
         : never;
     } & {};
+
+    /**
+     * Contains code for parameter to argument conversion.
+     */
+
+    export interface QueryTypes {
+      zxc: {
+        params: [
+          optional?: Maybe<ScalarsEnums['String']>,
+          required: ScalarsEnums['Int']
+        ];
+        return: Maybe<ScalarsEnums['Int']>;
+      };
+    }
+
+    export const QueryParamNames = {
+      zxc: ['optional', 'required'],
+    };
+
+    export function convertParamsToArgsFn<T>(
+      argNames: string[],
+      params: unknown[]
+    ): T {
+      const result: Record<string, unknown> = {};
+
+      argNames.forEach((key, index) => {
+        const value = params[index];
+        // Only set the property if it's not undefined
+        if (value !== undefined) {
+          result[key] = value;
+        }
+      });
+
+      return result as T;
+    }
+
+    export const convertParamsToArgs = {
+      Mutation: {},
+      Query: {
+        zxc(params: QueryTypes['zxc']['params']): Parameters<Query['zxc']>[0] {
+          return convertParamsToArgsFn<Parameters<Query['zxc']>[0]>(
+            QueryParamNames['zxc'],
+            params
+          );
+        },
+      },
+    };
     "
   `);
   expect(scalarsEnumsHash).toMatchInlineSnapshot(`
@@ -2120,7 +2485,7 @@ test('fields with default value works', async () => {
 
     // This should be included
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -2196,6 +2561,52 @@ test('fields with default value works', async () => {
         ? Scalars[Key]['output']
         : never;
     } & {};
+
+    /**
+     * Contains code for parameter to argument conversion.
+     */
+
+    export interface QueryTypes {
+      hello: {
+        params: [world: ScalarsEnums['String']];
+        return: ScalarsEnums['String'];
+      };
+    }
+
+    export const QueryParamNames = {
+      hello: ['world'],
+    };
+
+    export function convertParamsToArgsFn<T>(
+      argNames: string[],
+      params: unknown[]
+    ): T {
+      const result: Record<string, unknown> = {};
+
+      argNames.forEach((key, index) => {
+        const value = params[index];
+        // Only set the property if it's not undefined
+        if (value !== undefined) {
+          result[key] = value;
+        }
+      });
+
+      return result as T;
+    }
+
+    export const convertParamsToArgs = {
+      Mutation: {},
+      Query: {
+        hello(
+          params: QueryTypes['hello']['params']
+        ): Parameters<Query['hello']>[0] {
+          return convertParamsToArgsFn<Parameters<Query['hello']>[0]>(
+            QueryParamNames['hello'],
+            params
+          );
+        },
+      },
+    };
     "
   `);
 

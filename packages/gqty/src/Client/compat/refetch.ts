@@ -31,7 +31,7 @@ export const createRefetch = <TSchema extends BaseGeneratedSchema>({
       const selection = $meta(fnOrProxy as never)?.selection;
       if (!selection) {
         if (process.env.NODE_ENV !== 'production') {
-          console.warn('[gqty] Invalid proxy to refetch!');
+          console.warn('[pgqty] Invalid proxy to refetch!');
         }
 
         return fnOrProxy;

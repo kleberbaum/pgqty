@@ -1,4 +1,4 @@
-import { Cache } from 'gqty';
+import { Cache } from 'pgqty';
 import { createTestClient } from './utils';
 
 const testClientPromise = createTestClient(undefined, undefined, undefined, {

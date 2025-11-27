@@ -1,18 +1,18 @@
 <p align="center">
-  <a href="https://gqty.dev">
-    <img src="https://github.com/gqty-dev/gqty/raw/main/internal/images/logo.png" height="150" alt="gqty" />
+  <a href="https://github.com/kleberbaum/pgqty">
+    <img src="https://github.com/gqty-dev/gqty/raw/main/internal/images/logo.png" height="150" alt="pgqty" />
   </a>
 </p>
 
 <h2 align="center">
   The No-GraphQL Client for TypeScript
 
-[![Documentation](https://img.shields.io/badge/documentation-documentation?color=C00B84)](https://gqty.dev)
-[![Discord](https://img.shields.io/discord/874477141834739762?color=7289d9&label=discord)](https://discord.gg/U967mp5qbQ)
+[![Repository](https://img.shields.io/badge/github-kleberbaum%2Fpgqty-blue)](https://github.com/kleberbaum/pgqty)
+[![NPM](https://img.shields.io/badge/npm-pgqty-red)](https://www.npmjs.com/package/pgqty)
 
 </h2>
 
-[![GQty Hero Section](https://github.com/gqty-dev/gqty/raw/main/internal/images/hero.png)](https://gqty.dev)
+[![PGQty Hero Section](https://github.com/gqty-dev/gqty/raw/main/internal/images/hero.png)](https://github.com/kleberbaum/pgqty)
 
 Data requirements within your application are picked up automatically, freeing
 you from having to maintain GraphQL queries by-hand. It offers a first-class

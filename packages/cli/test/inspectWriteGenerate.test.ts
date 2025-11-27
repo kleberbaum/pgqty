@@ -58,14 +58,14 @@ test('basic inspectWriteGenerate functionality', async () => {
        * GQty: You can safely modify this file based on your needs.
        */
 
-      import { createReactClient } from '@gqty/react';
-      import { createSolidClient } from '@gqty/solid';
+      import { createReactClient } from '@pgqty/react';
+      import { createSolidClient } from '@pgqty/solid';
       import {
         Cache,
         createClient,
         defaultResponseHandler,
         type QueryFetcher,
-      } from 'gqty';
+      } from 'pgqty';
       import {
         generatedSchema,
         scalarsEnumsHash,
@@ -164,7 +164,7 @@ test('basic inspectWriteGenerate functionality', async () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -229,6 +229,32 @@ test('basic inspectWriteGenerate functionality', async () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {},
+        Query: {},
+      };
       "
     `);
   } finally {
@@ -276,14 +302,14 @@ describe('from file', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -378,7 +404,7 @@ describe('from file', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -444,6 +470,32 @@ describe('from file', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -493,14 +545,14 @@ describe('from file', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -595,7 +647,7 @@ describe('from file', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -660,6 +712,32 @@ describe('from file', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -709,14 +787,14 @@ describe('from file', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -811,7 +889,7 @@ describe('from file', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -876,6 +954,32 @@ describe('from file', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -969,14 +1073,14 @@ describe('from multiple files', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -1071,7 +1175,7 @@ describe('from multiple files', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -1111,8 +1215,8 @@ describe('from multiple files', () => {
           mutation: {},
           query: {
             __typename: { __type: 'String!' },
-            bar: { __type: 'Int!' },
             foo: { __type: 'Int!' },
+            bar: { __type: 'Int!' },
           },
           subscription: {},
         } as const;
@@ -1123,8 +1227,8 @@ describe('from multiple files', () => {
 
         export interface Query {
           __typename?: 'Query';
-          bar: ScalarsEnums['Int'];
           foo: ScalarsEnums['Int'];
+          bar: ScalarsEnums['Int'];
         }
 
         export interface Subscription {
@@ -1142,6 +1246,32 @@ describe('from multiple files', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -1245,14 +1375,14 @@ test('specify generateOptions to inspectWriteGenerate', async () => {
        * GQty: You can safely modify this file based on your needs.
        */
 
-      import { createReactClient } from '@gqty/react';
-      import { createSolidClient } from '@gqty/solid';
+      import { createReactClient } from '@pgqty/react';
+      import { createSolidClient } from '@pgqty/solid';
       import {
         Cache,
         createClient,
         defaultResponseHandler,
         type QueryFetcher,
-      } from 'gqty';
+      } from 'pgqty';
       import {
         generatedSchema,
         scalarsEnumsHash,
@@ -1349,7 +1479,7 @@ test('specify generateOptions to inspectWriteGenerate', async () => {
 
       // This should be included
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -1414,6 +1544,32 @@ test('specify generateOptions to inspectWriteGenerate', async () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {},
+        Query: {},
+      };
       "
     `);
 
@@ -1487,7 +1643,7 @@ describe('inspect headers', () => {
 
         // This should be included
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -1552,6 +1708,32 @@ describe('inspect headers', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
 
@@ -1622,14 +1804,14 @@ describe('CLI behavior', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -1728,7 +1910,7 @@ describe('CLI behavior', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -1793,6 +1975,32 @@ describe('CLI behavior', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {

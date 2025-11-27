@@ -1,4 +1,4 @@
-# @gqty/logger
+# @pgqty/logger
 
 ## 3.0.6
 

@@ -5,7 +5,7 @@ import {
   type ClientOptions,
   type QueryFetcher,
   type Schema,
-} from 'gqty';
+} from 'pgqty';
 import { createClient as createSubscriptionsClient } from 'graphql-ws';
 import { merge } from 'lodash-es';
 import {

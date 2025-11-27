@@ -1,4 +1,4 @@
-import type { DebugEvent, GQtyClient, Selection } from 'gqty';
+import type { DebugEvent, GQtyClient, Selection } from 'pgqty';
 import type { Plugin } from 'prettier';
 import * as prettierBabel from 'prettier/plugins/babel';
 import * as prettierEstree from 'prettier/plugins/estree';

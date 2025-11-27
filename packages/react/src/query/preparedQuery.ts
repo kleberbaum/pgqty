@@ -1,4 +1,4 @@
-import { GQtyError, type BaseGeneratedSchema, type GQtyClient } from 'gqty';
+import { GQtyError, type BaseGeneratedSchema, type GQtyClient } from 'pgqty';
 import { useSyncExternalStore } from 'use-sync-external-store/shim/index.js';
 import { createMemoryStore } from '../memoryStore';
 import type { ReactClientOptionsWithDefaults } from '../utils';
@@ -10,12 +10,12 @@ export interface UsePreparedQueryOptions {
 export type TQueryFunction<
   TSchema extends BaseGeneratedSchema,
   TArgs = Record<string, unknown> | undefined,
-  TData = unknown
+  TData = unknown,
 > = (query: TSchema['query'], args: TArgs) => TData;
 
 export interface PreparedQuery<
   TSchema extends BaseGeneratedSchema,
-  TFunction extends TQueryFunction<TSchema>
+  TFunction extends TQueryFunction<TSchema>,
 > {
   preload: PreloadFn<TSchema, TFunction>;
   refetch: RefetchFn<TSchema, TFunction>;
@@ -25,17 +25,17 @@ export interface PreparedQuery<
 
 export type PreloadFn<
   TSchema extends BaseGeneratedSchema,
-  TFunction extends TQueryFunction<TSchema>
+  TFunction extends TQueryFunction<TSchema>,
 > = (args?: Parameters<TFunction>[1]) => Promise<ReturnType<TFunction>>;
 
 export type RefetchFn<
   TSchema extends BaseGeneratedSchema,
-  TFunction extends TQueryFunction<TSchema>
+  TFunction extends TQueryFunction<TSchema>,
 > = (args?: Parameters<TFunction>[1]) => Promise<ReturnType<TFunction>>;
 
 export type UsePreparedHook<
   TSchema extends BaseGeneratedSchema,
-  TFunction extends TQueryFunction<TSchema>
+  TFunction extends TQueryFunction<TSchema>,
 > = (
   options?: UsePreparedQueryOptions
 ) => PreparedQueryState<ReturnType<TFunction>>;
@@ -50,10 +50,9 @@ export type PreparedQueryState<TData = unknown> = {
 };
 
 export interface PrepareQuery<TSchema extends BaseGeneratedSchema> {
-  <TFunction extends TQueryFunction<TSchema>>(fn: TFunction): PreparedQuery<
-    TSchema,
-    TFunction
-  >;
+  <TFunction extends TQueryFunction<TSchema>>(
+    fn: TFunction
+  ): PreparedQuery<TSchema, TFunction>;
 }
 
 export function createPrepareQuery<TSchema extends BaseGeneratedSchema>(

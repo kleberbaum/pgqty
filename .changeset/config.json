@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.1.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "gqty-dev/gqty" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "kleberbaum/pgqty" }],
   "commit": false,
   "linked": [],
   "access": "public",

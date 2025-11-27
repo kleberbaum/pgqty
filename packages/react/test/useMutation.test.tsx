@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { Cache } from 'gqty';
+import { Cache } from 'pgqty';
 import { act } from 'react';
 import { createReactTestClient } from './utils';
 

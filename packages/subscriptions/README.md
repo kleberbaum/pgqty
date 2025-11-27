@@ -1,3 +1,5 @@
-# @gqty/subscription
+# @pgqty/subscription
 
-## Visit [https://gqty.dev/docs/client/subscriptions](https://gqty.dev/docs/client/subscriptions)
+PGQty subscriptions are published under the new `@pgqty/subscriptions` name.
+Refer to this repository's README for current setup notes while refreshed
+documentation is prepared.

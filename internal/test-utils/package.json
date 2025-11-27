@@ -41,7 +41,7 @@
     "@types/jest": "^29.5.14",
     "cross-env": "^7.0.3",
     "fastify": "^4.29.0",
-    "gqty": "workspace:^",
+    "pgqty": "workspace:^",
     "graphql": "^16.10.0",
     "graphql-ez": "^0.16.1",
     "graphql-scalars": "^1.24.1",
@@ -65,7 +65,7 @@
       "optional": true
     }
   },
-  "gqty": {
+  "pgqty": {
     "scalarTypes": {
       "Date": "string"
     }

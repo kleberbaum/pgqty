@@ -1,11 +1,11 @@
 {
-  "name": "gqty",
+  "name": "pgqty",
   "version": "3.4.1",
   "description": "The No-GraphQL Client for TypeScript",
-  "homepage": "https://gqty.dev",
+  "homepage": "https://github.com/kleberbaum/pgqty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gqty-dev/gqty.git"
+    "url": "https://github.com/kleberbaum/pgqty.git"
   },
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",

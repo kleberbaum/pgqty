@@ -1,4 +1,4 @@
-# @gqty/cli
+# @pgqty/cli
 
 ## 4.2.5
 
@@ -253,7 +253,6 @@
   ```
 
   See also:
-
   - [Ben Lesh on Twitter: "I've run across this pattern for enums in TypeScript..."](https://twitter.com/BenLesh/status/1510983348944056327/)
   - [Replacing Enums With Unions](https://www.tomche.space/post/replacing-enums-with-unions/)
 
@@ -385,7 +384,7 @@
   // graphql-ez
 
   // ...
-  import { useGenerateGQty } from '@gqty/cli/envelop';
+  import { useGenerateGQty } from '@pgqty/cli/envelop';
 
   const ezApp = CreateApp({
     // ...
@@ -404,7 +403,7 @@
   // Envelop
 
   import { envelop } from '@envelop/core';
-  import { useGenerateGQty } from '@gqty/cli/envelop';
+  import { useGenerateGQty } from '@pgqty/cli/envelop';
 
   //...
 

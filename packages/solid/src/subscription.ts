@@ -1,5 +1,5 @@
 import { debounceMicrotask } from 'debounce-microtasks';
-import type { BaseGeneratedSchema, Client } from 'gqty';
+import type { BaseGeneratedSchema, Client } from 'pgqty';
 import { createSignal, onCleanup, type Accessor } from 'solid-js';
 import type { CommonOptions, DefaultOptions, SolidClientOptions } from '.';
 

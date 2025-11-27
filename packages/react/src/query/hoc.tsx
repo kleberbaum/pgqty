@@ -1,5 +1,5 @@
 import { useRerender } from '@react-hookz/web';
-import type { BaseGeneratedSchema, GQtyClient } from 'gqty';
+import type { BaseGeneratedSchema, GQtyClient } from 'pgqty';
 import * as React from 'react';
 import type { OnErrorHandler } from '../common';
 import type { ReactClientOptionsWithDefaults } from '../utils';

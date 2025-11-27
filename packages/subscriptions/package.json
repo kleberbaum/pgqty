@@ -1,11 +1,11 @@
 {
-  "name": "@gqty/subscriptions",
+  "name": "@pgqty/subscriptions",
   "version": "3.0.5",
   "private": true,
-  "homepage": "https://gqty.dev",
+  "homepage": "https://github.com/kleberbaum/pgqty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gqty-dev/gqty.git"
+    "url": "https://github.com/kleberbaum/pgqty.git"
   },
   "sideEffects": false,
   "exports": {
@@ -43,14 +43,14 @@
     "@types/node": "^22.13.4",
     "@types/ws": "^8.5.14",
     "bob-esbuild-cli": "^4.0.0",
-    "gqty": "workspace:^",
     "graphql": "^16.10.0",
+    "pgqty": "workspace:^",
     "test-utils": "workspace:^",
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
-    "gqty": "workspace:^3.4.1",
-    "graphql": "*"
+    "graphql": "*",
+    "pgqty": "workspace:^3.4.1"
   },
   "peerDependenciesMeta": {
     "graphql": {

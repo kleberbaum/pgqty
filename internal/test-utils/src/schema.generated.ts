@@ -2,7 +2,7 @@
  * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
  */
 
-import { SchemaUnionsKey, type ScalarsEnumsHash } from 'gqty';
+import { SchemaUnionsKey, type ScalarsEnumsHash } from 'pgqty';
 
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;

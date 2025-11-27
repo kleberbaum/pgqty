@@ -1,4 +1,4 @@
-import { parseSchemaType, type Schema, type ScalarsEnumsHash } from 'gqty';
+import { parseSchemaType, type Schema, type ScalarsEnumsHash } from 'pgqty';
 
 /**
  * Generates code for two interfaces: `MutationTypes` and `QueryTypes`.

@@ -201,7 +201,7 @@ export const createClient = <
     }
   }
 
-  // [ ] Defer creation until `@gqty/logger` is used.
+  // [ ] Defer creation until `@pgqty/logger` is used.
   const debug = createDebugger();
 
   // Global scope for accessing the cache via `schema` property.

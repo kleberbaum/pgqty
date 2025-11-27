@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "codegen": "dotenv -c local -- bash -c 'pnpm exec gqty --no-react -H apiKey:$NEXT_PUBLIC_SUPABASE_API_KEY $NEXT_PUBLIC_SUPABASE_ENDPOINT'",
+    "codegen": "dotenv -c local -- bash -c 'pnpm exec pgqty --no-react -H apiKey:$NEXT_PUBLIC_SUPABASE_API_KEY $NEXT_PUBLIC_SUPABASE_ENDPOINT'",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
-    "@gqty/logger": "workspace:^",
-    "@gqty/react": "workspace:^",
+    "@pgqty/logger": "workspace:^",
+    "@pgqty/react": "workspace:^",
     "@nhost/nextjs": "^2.2.3",
-    "gqty": "workspace:^",
+    "pgqty": "workspace:^",
     "graphql": "^16.10.0",
     "graphql-ws": "^5.16.2",
     "next": "15.1.7",
@@ -21,7 +21,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@gqty/cli": "workspace:^",
+    "@pgqty/cli": "workspace:^",
     "@next/bundle-analyzer": "^15.1.7",
     "@tailwindcss/postcss": "^4.0.6",
     "@tailwindcss/typography": "^0.5.16",
@@ -35,7 +35,7 @@
     "tailwindcss": "^4.0.6",
     "typescript": "^5.7.3"
   },
-  "gqty": {
+  "pgqty": {
     "scalarTypes": {
       "BigFloat": "string",
       "BigInt": "string",
