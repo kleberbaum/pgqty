@@ -1,6 +1,6 @@
 {
   "name": "@pgqty/subscriptions",
-  "version": "3.0.5",
+  "version": "4.0.0",
   "private": true,
   "homepage": "https://github.com/kleberbaum/pgqty",
   "repository": {
@@ -50,7 +50,7 @@
   },
   "peerDependencies": {
     "graphql": "*",
-    "pgqty": "workspace:^3.4.1"
+    "pgqty": "workspace:^4.0.0"
   },
   "peerDependenciesMeta": {
     "graphql": {

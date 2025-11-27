@@ -1,6 +1,6 @@
 {
   "name": "@pgqty/cli",
-  "version": "4.2.5",
+  "version": "5.0.0",
   "description": "Interactive codegen for PGQty",
   "keywords": [
     "client",

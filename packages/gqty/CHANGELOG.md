@@ -1,5 +1,21 @@
 # pgqty
 
+## 4.0.0
+
+### Major Changes
+
+- [#1](https://github.com/kleberbaum/pgqty/pull/1)
+  [`f5d66bb`](https://github.com/kleberbaum/pgqty/commit/f5d66bba8b23a60ffb0b757ab72df6d8cfe55363)
+  Thanks [@kleberbaum](https://github.com/kleberbaum)! - Rename the project for
+  the `pgqty` npm namespace, updating package metadata, CLI defaults, and
+  documentation to reflect the new release channel.
+
+### Patch Changes
+
+- [`96207d7`](https://github.com/kleberbaum/pgqty/commit/96207d7e263bb15b4f5ae1353a55d4aad5f955ef)
+  Thanks [@vicary](https://github.com/vicary)! - skip numeric selection keys in
+  optimistic updates
+
 ## 3.4.1
 
 ### Patch Changes
