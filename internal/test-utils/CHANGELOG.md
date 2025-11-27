@@ -1,5 +1,14 @@
 # test-utils
 
+## 0.2.5
+
+### Patch Changes
+
+- Updated dependencies
+  [[`f5d66bb`](https://github.com/kleberbaum/pgqty/commit/f5d66bba8b23a60ffb0b757ab72df6d8cfe55363),
+  [`96207d7`](https://github.com/kleberbaum/pgqty/commit/96207d7e263bb15b4f5ae1353a55d4aad5f955ef)]:
+  - pgqty@4.0.0
+
 ## 0.2.4
 
 ### Patch Changes
