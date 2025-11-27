@@ -1,4 +1,4 @@
-import { createReactClient } from '@gqty/react';
+import { createReactClient } from '@pgqty/react';
 import { client } from '.';
 import type { GeneratedSchema } from './schema.generated';
 

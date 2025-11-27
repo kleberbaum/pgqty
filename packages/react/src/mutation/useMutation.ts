@@ -3,7 +3,7 @@ import {
   type BaseGeneratedSchema,
   type GQtyClient,
   type RetryOptions,
-} from 'gqty';
+} from 'pgqty';
 import * as React from 'react';
 import type { OnErrorHandler } from '../common';
 import type { ReactClientOptionsWithDefaults } from '../utils';

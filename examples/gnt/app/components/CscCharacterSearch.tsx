@@ -1,6 +1,6 @@
 'use client';
 
-import type { Variables } from 'gqty';
+import type { Variables } from 'pgqty';
 import { useState, type FunctionComponent } from 'react';
 import Button from '~/components/tailwindui/Button';
 import type { Query } from '~/gqty';

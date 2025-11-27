@@ -3,7 +3,7 @@
  * as a testing point for backwards compatibility.
  */
 
-import { createSubscriptionsClient } from '@gqty/subscriptions';
+import { createSubscriptionsClient } from '@pgqty/subscriptions';
 import extractFiles from 'extract-files/extractFiles.mjs';
 import isExtractableFile from 'extract-files/isExtractableFile.mjs';
 import {
@@ -11,7 +11,7 @@ import {
   createClient,
   defaultResponseHandler,
   LegacyQueryFetcher as QueryFetcher,
-} from 'gqty';
+} from 'pgqty';
 import {
   GeneratedSchema,
   generatedSchema,

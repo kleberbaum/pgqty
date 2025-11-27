@@ -83,7 +83,7 @@ export const defaultConfig: SetRequired<
     headers: {} as Record<string, string>,
   },
   endpoint: '/api/graphql',
-  destination: './src/gqty/index.ts',
+  destination: './src/pgqty/index.ts',
   subscriptions: false,
   javascriptOutput: false,
   enumStyle: 'enum',
@@ -265,9 +265,9 @@ export function getValidConfig(v: unknown): GQtyConfig {
   }
 }
 
-const defaultFilePath = resolve(process.cwd(), 'gqty.config.cjs');
+const defaultFilePath = resolve(process.cwd(), 'pgqty.config.cjs');
 
-const defaultGQtyConfig = {
+const defaultPgqtyConfig = {
   filepath: defaultFilePath,
   config: defaultConfig,
 };
@@ -278,28 +278,45 @@ type GQtyConfigResult = {
   isEmpty?: boolean;
 };
 
-let gqtyConfigPromise: Promise<GQtyConfigResult> | undefined = undefined;
+let pgqtyConfigPromise: Promise<GQtyConfigResult> | undefined = undefined;
 
 export const loadOrGenerateConfig = async ({
   writeConfigFile = false,
 }: {
   writeConfigFile?: boolean;
 } = {}): Promise<GQtyConfigResult> => {
-  if (gqtyConfigPromise === undefined) {
+  if (pgqtyConfigPromise === undefined) {
     const promiseHandler = async () => {
       try {
         const cjsLoader: deps.Loader = (filePath) => {
           return cjsRequire(filePath);
         };
-        const config = await deps
-          .cosmiconfig('gqty', {
-            searchPlaces: ['gqty.config.cjs', 'gqty.config.js', 'package.json'],
-            loaders: {
-              '.cjs': cjsLoader,
-              '.js': cjsLoader,
-            },
-          })
-          .search();
+        const loaders = {
+          '.cjs': cjsLoader,
+          '.js': cjsLoader,
+        } satisfies deps.Loaders;
+
+        const config =
+          (await deps
+            .cosmiconfig('pgqty', {
+              searchPlaces: [
+                'pgqty.config.cjs',
+                'pgqty.config.js',
+                'package.json',
+              ],
+              loaders,
+            })
+            .search()) ||
+          (await deps
+            .cosmiconfig('gqty', {
+              searchPlaces: [
+                'gqty.config.cjs',
+                'gqty.config.js',
+                'package.json',
+              ],
+              loaders,
+            })
+            .search());
 
         if (!config || config.isEmpty) {
           const filepath = config?.filepath || defaultFilePath;
@@ -324,7 +341,7 @@ export const loadOrGenerateConfig = async ({
                 defaultFilePath,
                 await format(`
                           /**
-                           * @type {import("@gqty/cli").GQtyConfig}
+                           * @type {import("@pgqty/cli").GQtyConfig}
                            */
                           const config = ${JSON.stringify(config)};
 
@@ -346,12 +363,12 @@ export const loadOrGenerateConfig = async ({
       } catch (err) {
         console.error(err);
 
-        return defaultGQtyConfig;
+        return defaultPgqtyConfig;
       }
     };
 
-    gqtyConfigPromise = promiseHandler();
+    pgqtyConfigPromise = promiseHandler();
   }
 
-  return gqtyConfigPromise;
+  return pgqtyConfigPromise;
 };

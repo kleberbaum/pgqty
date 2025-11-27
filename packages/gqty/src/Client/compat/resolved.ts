@@ -155,7 +155,7 @@ export const createLegacyResolved = <
       if (onEmptyResolve) {
         onEmptyResolve();
       } else if (process.env.NODE_ENV !== 'production') {
-        console.warn('[gqty] Warning! No data requested.');
+        console.warn('[pgqty] Warning! No data requested.');
       }
 
       return data;

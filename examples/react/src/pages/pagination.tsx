@@ -1,5 +1,5 @@
 import { Button, Stack, Text } from '@chakra-ui/react';
-import type { Variables } from 'gqty';
+import type { Variables } from 'pgqty';
 import { usePaginatedQuery } from '../components/client';
 import { Query } from '../graphql/gqty';
 

@@ -1,4 +1,4 @@
-import type { BaseGeneratedSchema, Client } from 'gqty';
+import type { BaseGeneratedSchema, Client } from 'pgqty';
 import type { CommonOptions, DefaultOptions, SolidClientOptions } from '.';
 
 export type MutateFunction<

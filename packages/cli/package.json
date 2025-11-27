@@ -1,19 +1,19 @@
 {
-  "name": "@gqty/cli",
+  "name": "@pgqty/cli",
   "version": "4.2.5",
-  "description": "Interactive codegen for GQty",
+  "description": "Interactive codegen for PGQty",
   "keywords": [
     "client",
     "codegen",
-    "gqty",
+    "pgqty",
     "graphql",
     "interactive",
     "reactive"
   ],
-  "homepage": "https://gqty.dev",
+  "homepage": "https://github.com/kleberbaum/pgqty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gqty-dev/gqty.git"
+    "url": "https://github.com/kleberbaum/pgqty.git"
   },
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
@@ -83,10 +83,10 @@
     "cosmiconfig": "^9.0.0",
     "cross-fetch": "^4.1.0",
     "fast-glob": "^3.3.3",
-    "gqty": "workspace:^",
     "graphql": "^16.10.0",
     "lodash-es": "^4.17.21",
     "micromatch": "^4.0.8",
+    "pgqty": "workspace:^",
     "prettier": "^2.8.8"
   },
   "devDependencies": {

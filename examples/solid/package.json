@@ -12,8 +12,8 @@
     "start": "vite"
   },
   "dependencies": {
-    "@gqty/solid": "workspace:^",
-    "gqty": "workspace:^",
+    "@pgqty/solid": "workspace:^",
+    "pgqty": "workspace:^",
     "solid-js": "^1.9.4"
   },
   "devDependencies": {

@@ -5,10 +5,10 @@ export const addCommand = (command: Command) => {
     .command('generate [endpoint] [destination]', { hidden: true })
     .option('--react', 'Create React client')
     .description(
-      `Inspect or read from a file a GraphQL Schema and generate the gqty client in the specified directory (./src/generated/graphql.ts by default).
-EXAMPLE 1: "gqty generate ./schema.gql --react"
-EXAMPLE 2: "gqty generate http://localhost:3000/graphql src/gqty/index.ts"
-EXAMPLE 3 (Configuration file): "gqty generate"`
+      `Inspect or read from a file a GraphQL Schema and generate the pgqty client in the specified directory (./src/generated/graphql.ts by default).
+EXAMPLE 1: "pgqty generate ./schema.gql --react"
+EXAMPLE 2: "pgqty generate http://localhost:3000/graphql src/pgqty/index.ts"
+EXAMPLE 3 (Configuration file): "pgqty generate"`
     )
     .action(async (endpoint, destination, opts) => {
       const { defaultConfig } = await import('../config');

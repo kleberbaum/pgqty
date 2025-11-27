@@ -1,5 +1,5 @@
 /**
- * @type {import("@gqty/cli").GQtyConfig}
+ * @type {import("@pgqty/cli").GQtyConfig}
  */
 const config = {
   enumsAsStrings: false,

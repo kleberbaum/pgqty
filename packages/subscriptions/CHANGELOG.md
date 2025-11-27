@@ -1,4 +1,4 @@
-# @gqty/subscriptions
+# @pgqty/subscriptions
 
 ## 3.0.5
 

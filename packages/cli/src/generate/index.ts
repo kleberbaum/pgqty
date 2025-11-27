@@ -6,7 +6,7 @@ import {
   type ScalarsEnumsHash,
   type Schema,
   type Type,
-} from 'gqty';
+} from 'pgqty';
 import type {
   GraphQLEnumType,
   GraphQLField,
@@ -128,7 +128,7 @@ export interface GenerateOptions {
 export interface TransformSchemaOptions {
   /**
    * Get a field in which every argument is optional, if this functions return
-   * "true", gqty will _always__ ignore it's arguments, and you won't be able to
+   * "true", pgqty will _always__ ignore it's arguments, and you won't be able to
    * specify them
    */
   ignoreArgs?: (type: GraphQLField<unknown, unknown>) => boolean;
@@ -200,7 +200,7 @@ export async function generate(
     schema: parse(deps.printSchemaWithDirectives(schema)),
     config: {} satisfies deps.typescriptPlugin.TypeScriptPluginConfig,
     documents: [],
-    filename: 'gqty.generated.ts',
+    filename: 'pgqty.generated.ts',
     pluginMap: {
       typescript: deps.typescriptPlugin,
     },
@@ -812,7 +812,7 @@ export async function generate(
   const queryFetcher = `
     ${
       isJavascriptOutput
-        ? typeDoc('import("gqty").QueryFetcher') + 'const queryFetcher'
+        ? typeDoc('import("pgqty").QueryFetcher') + 'const queryFetcher'
         : 'const queryFetcher: QueryFetcher'
     } = async function ({ query, variables, operationName }, fetchOptions) {
         // Modify "${endpoint}" if needed
@@ -859,10 +859,10 @@ export async function generate(
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    ${hasUnions ? 'import { SchemaUnionsKey } from "gqty";' : ``}
+    ${hasUnions ? 'import { SchemaUnionsKey } from "pgqty";' : ``}
 
     ${typeDoc(
-      'import("gqty").ScalarsEnumsHash'
+      'import("pgqty").ScalarsEnumsHash'
     )}export const scalarsEnumsHash = ${scalarsEnumsHashString};
 
     export const generatedSchema = {${generatedSchemaCodeString}};
@@ -892,7 +892,7 @@ export async function generate(
 
     ${preImport}
 
-    ${imports.length ? `import { ${imports.join(', ')} } from "gqty";` : ``}
+    ${imports.length ? `import { ${imports.join(', ')} } from "pgqty";` : ``}
 
     ${await codegenResultPromise}
 
@@ -928,7 +928,7 @@ export async function generate(
         } = ${
           isJavascriptOutput
             ? `${typeDoc(
-                'import("@gqty/react").ReactClient<import("./schema.generated").GeneratedSchema>'
+                'import("@pgqty/react").ReactClient<import("./schema.generated").GeneratedSchema>'
               )}createReactClient(client, {`
             : `createReactClient<GeneratedSchema>(client, {`
         }
@@ -952,16 +952,16 @@ export async function generate(
      */
 
     ${[
-      react ? `import { createReactClient } from "@gqty/react";` : ``,
-      solid ? `import { createSolidClient } from "@gqty/solid";` : ``,
+      react ? `import { createReactClient } from "@pgqty/react";` : ``,
+      solid ? `import { createSolidClient } from "@pgqty/solid";` : ``,
       subscriptions
         ? `import { createClient as createSubscriptionsClient } from "${
             subscriptions === true ? 'graphql-ws' : subscriptions
           }";`
         : ``,
       isJavascriptOutput
-        ? 'import { Cache, createClient, defaultResponseHandler } from "gqty";'
-        : 'import { Cache, createClient, defaultResponseHandler, type QueryFetcher } from "gqty";',
+        ? 'import { Cache, createClient, defaultResponseHandler } from "pgqty";'
+        : 'import { Cache, createClient, defaultResponseHandler, type QueryFetcher } from "pgqty";',
       isJavascriptOutput
         ? 'import { generatedSchema, scalarsEnumsHash } from "./schema.generated";'
         : 'import { generatedSchema, scalarsEnumsHash, type GeneratedSchema } from "./schema.generated";',
@@ -1003,7 +1003,7 @@ export async function generate(
     ${
       isJavascriptOutput
         ? `${typeDoc(
-            'import("gqty").GQtyClient<import("./schema.generated").GeneratedSchema>'
+            'import("pgqty").GQtyClient<import("./schema.generated").GeneratedSchema>'
           )}export const client = createClient({
       schema: generatedSchema,
       scalars: scalarsEnumsHash,

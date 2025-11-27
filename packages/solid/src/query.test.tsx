@@ -13,7 +13,7 @@
 
 import { render, testEffect, waitFor } from '@solidjs/testing-library';
 import userEvent from '@testing-library/user-event';
-import { Cache, GQtyError, type QueryPayload } from 'gqty';
+import { Cache, GQtyError, type QueryPayload } from 'pgqty';
 import { createEffect, createSignal, ErrorBoundary, Suspense } from 'solid-js';
 import { describe, expect, it, vi } from 'vitest';
 import { createMockSolidClient } from '../test/client';

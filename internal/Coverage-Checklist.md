@@ -4,7 +4,7 @@ This is an internal documentation for contributors who wants to build a new
 package on top of GQty core.
 
 This article serves as a first draft of a checklist, and is written from the
-experience of building `@gqty/solid` from the ground up.
+experience of building `@pgqty/solid` from the ground up.
 
 1. It MUST support Query, Mutation and Subscription operations.
 2. It MUST expose a Proxy object as the main selection API.

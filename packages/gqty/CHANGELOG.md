@@ -1,4 +1,4 @@
-# gqty
+# pgqty
 
 ## 3.4.1
 
@@ -110,7 +110,7 @@
 - [#1544](https://github.com/gqty-dev/gqty/pull/1544)
   [`a758ed1`](https://github.com/gqty-dev/gqty/commit/a758ed17130ff2f5e8fc659c9ded3203798f9724)
   Thanks [@vicary](https://github.com/vicary)! - Added new logging interface for
-  `@gqty/logger`
+  `@pgqty/logger`
 
 - [#1544](https://github.com/gqty-dev/gqty/pull/1544)
   [`a758ed1`](https://github.com/gqty-dev/gqty/commit/a758ed17130ff2f5e8fc659c9ded3203798f9724)
@@ -140,7 +140,7 @@
 
 - [#1544](https://github.com/gqty-dev/gqty/pull/1544)
   [`a758ed1`](https://github.com/gqty-dev/gqty/commit/a758ed17130ff2f5e8fc659c9ded3203798f9724)
-  Thanks [@vicary](https://github.com/vicary)! - Replaced `@gqty/subscriptions`
+  Thanks [@vicary](https://github.com/vicary)! - Replaced `@pgqty/subscriptions`
   with `graphql-ws` and `graphql-sse`
 
 - [#1544](https://github.com/gqty-dev/gqty/pull/1544)
@@ -155,7 +155,7 @@
 - [#1544](https://github.com/gqty-dev/gqty/pull/1544)
   [`a758ed1`](https://github.com/gqty-dev/gqty/commit/a758ed17130ff2f5e8fc659c9ded3203798f9724)
   Thanks [@vicary](https://github.com/vicary)! - Replaced `lodash` with `just-*`
-  and dropped `@gqty/utils`
+  and dropped `@pgqty/utils`
 
 - [#1544](https://github.com/gqty-dev/gqty/pull/1544)
   [`a758ed1`](https://github.com/gqty-dev/gqty/commit/a758ed17130ff2f5e8fc659c9ded3203798f9724)
@@ -225,17 +225,17 @@
 ### Major Changes
 
 - Added "Legacy" prefix to deprecated types
-- Added new logging interface for `@gqty/logger`
+- Added new logging interface for `@pgqty/logger`
 - `backupPersistence()` and `restorePersistence()` is now replaced with
   `persist()`, `restore()` and `restoreAsync()`.
 - QueryFetcher now accepts QueryPayload instead of 3 parameters
 - Remade `Cache` with expiry, normalization and persistence
 - Axed `Scheduler`, `Interceptor` and `EventHandler`
 - Reworked `Accessor` and added scoped context
-- Replaced `@gqty/subscriptions` with `graphql-ws` and `graphql-sse`
+- Replaced `@pgqty/subscriptions` with `graphql-ws` and `graphql-sse`
 - Rewritten `Selection` class
 - Introduced `resolve()` and `subscribe()` API
-- Replaced `lodash` with `just-*` and dropped `@gqty/utils`
+- Replaced `lodash` with `just-*` and dropped `@pgqty/utils`
 - Deprecated `resolved()`, `inlineResolved()`, `mutate()`, `track()`,
   `prefetch()` and `refetch()`
 - Replace variable serializer with object-hash, now with shortened alias
@@ -254,7 +254,7 @@
 
 ### Minor Changes
 
-- 6ecd2b0: Use lodash mergeWith from "@gqty/utils" package
+- 6ecd2b0: Use lodash mergeWith from "@pgqty/utils" package
 - 59d38ad: Change variable aliasing to be deterministic with cached and sliced
   sha1 hashing
 
@@ -262,7 +262,7 @@
 
 - Updated dependencies [6ecd2b0]
 - Updated dependencies [59d38ad]
-  - @gqty/utils@1.0.0
+  - @pgqty/utils@1.0.0
 
 ## 2.2.0
 
@@ -359,7 +359,7 @@
   ```ts
   import { query, Query } from '../gqty';
 
-  import type { Variables, Args } from 'gqty';
+  import type { Variables, Args } from 'pgqty';
 
   function getUserName(args: Variables<Query['user']>) {
     return query.user(args).name;

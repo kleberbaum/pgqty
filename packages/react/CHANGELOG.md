@@ -1,4 +1,4 @@
-# @gqty/react
+# @pgqty/react
 
 ## 3.1.0
 

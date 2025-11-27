@@ -1,4 +1,4 @@
-import { type Schema } from 'gqty';
+import { type Schema } from 'pgqty';
 
 /**
  * Generates TypeScript code that defines:

@@ -1,21 +1,21 @@
 {
-  "name": "@gqty/solid",
+  "name": "@pgqty/solid",
   "version": "0.2.3",
   "private": false,
   "description": "The No-GraphQL Client for React",
   "keywords": [
     "cache",
     "client",
-    "gqty",
+    "pgqty",
     "graphql",
     "reactive",
     "solid",
     "state"
   ],
-  "homepage": "https://gqty.dev",
+  "homepage": "https://github.com/kleberbaum/pgqty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gqty-dev/gqty.git"
+    "url": "https://github.com/kleberbaum/pgqty.git"
   },
   "license": "MIT",
   "author": "Vicary Archangel <vicary.archangel@member.mensa.org>",
@@ -51,7 +51,7 @@
     "vitest": "^3.0.5"
   },
   "peerDependencies": {
-    "gqty": "workspace:^3.4.1",
+    "pgqty": "workspace:^3.4.1",
     "solid-js": "^1.9.4"
   },
   "peerDependenciesMeta": {

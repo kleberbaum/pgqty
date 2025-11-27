@@ -519,7 +519,7 @@ describe('selectFields', () => {
       switch (n) {
         case 1:
           return expect(message).toMatchInlineSnapshot(
-            `"[gqty] Warning! No data requested."`
+            `"[pgqty] Warning! No data requested."`
           );
         default:
           throw Error('Unexpected warn: ' + message);
@@ -1085,7 +1085,7 @@ describe('selectFields', () => {
       switch (n) {
         case 1:
           return expect(message).toMatchInlineSnapshot(
-            `"[gqty] Warning! No data requested."`
+            `"[pgqty] Warning! No data requested."`
           );
         default:
           throw Error('Unexpected warn: ' + message);
@@ -1116,7 +1116,7 @@ describe('selectFields', () => {
       switch (n) {
         case 1:
           return expect(message).toMatchInlineSnapshot(
-            `"[gqty] Warning! No data requested."`
+            `"[pgqty] Warning! No data requested."`
           );
         default:
           throw Error('Unexpected warn: ' + message);
@@ -1137,7 +1137,7 @@ describe('selectFields', () => {
       switch (n) {
         case 1:
           return expect(message).toMatchInlineSnapshot(
-            `"[gqty] Warning! No data requested."`
+            `"[pgqty] Warning! No data requested."`
           );
         default:
           throw Error('Unexpected warn: ' + message);
@@ -1180,7 +1180,7 @@ describe('refetch function', () => {
   test('warns about no selections inside function, except on production', async () => {
     const spy = jest.spyOn(console, 'warn').mockImplementation((message) => {
       expect(message).toMatchInlineSnapshot(
-        `"[gqty] Warning! No data requested."`
+        `"[pgqty] Warning! No data requested."`
       );
     });
     const prevEnv = process.env.NODE_ENV;
@@ -1274,7 +1274,7 @@ describe('refetch function', () => {
 
   test('refetch proxy selections with invalid proxy', async () => {
     const spy = jest.spyOn(console, 'warn').mockImplementation((message) => {
-      expect(message).toBe('[gqty] Invalid proxy to refetch!');
+      expect(message).toBe('[pgqty] Invalid proxy to refetch!');
     });
 
     const prevNODE_ENV = process.env.NODE_ENV;

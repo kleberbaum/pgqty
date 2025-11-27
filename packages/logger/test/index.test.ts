@@ -1,4 +1,4 @@
-import { Cache, createClient } from 'gqty';
+import { Cache, createClient } from 'pgqty';
 import { createTestApp, gql } from 'test-utils';
 import { createLogger } from '../src';
 

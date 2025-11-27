@@ -2,13 +2,12 @@ import {
   type BaseGeneratedSchema,
   type GQtyClient,
   type LegacyHydrateCacheOptions,
-} from 'gqty';
+} from 'pgqty';
 import { type ReactNode, useEffect, useMemo } from 'react';
 import { version } from 'react-dom/server';
 import { getDefault, type ReactClientOptionsWithDefaults } from '../utils';
 
-export interface UseHydrateCacheOptions
-  extends Partial<LegacyHydrateCacheOptions> {
+export interface UseHydrateCacheOptions extends Partial<LegacyHydrateCacheOptions> {
   /**
    * Cache snapshot, returned from `prepareReactRender`
    */
@@ -55,9 +54,8 @@ export function createSSRHelpers<TSchema extends BaseGeneratedSchema>(
       const majorVersion = +version.split('.')[0];
 
       if (majorVersion >= 18) {
-        const { renderToPipeableStream, renderToReadableStream } = await import(
-          'react-dom/server'
-        );
+        const { renderToPipeableStream, renderToReadableStream } =
+          await import('react-dom/server');
 
         if (renderToReadableStream !== undefined) {
           return prepareRender(async () => {

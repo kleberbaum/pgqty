@@ -1,4 +1,4 @@
-import type { BaseGeneratedSchema, Client, RetryOptions } from 'gqty';
+import type { BaseGeneratedSchema, Client, RetryOptions } from 'pgqty';
 import { createMutation, type CreateMutation } from './mutation';
 import { createQuery, type CreateQuery } from './query';
 import { createSubscription, type CreateSubscription } from './subscription';

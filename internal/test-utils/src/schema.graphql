@@ -1,5 +1,5 @@
 # Note: Manually regenerate types after editing this schema.
-# pnpm dlx @gqty/cli --no-install ./src/schema.graphql
+# pnpm dlx @pgqty/cli --no-install ./src/schema.graphql
 
 """
 # Basic query

@@ -68,7 +68,7 @@ tsc
     packageJson: {
       ...packageJson,
       bin: {
-        gqty: './bin.mjs',
+        pgqty: './bin.mjs',
       },
     },
     distDir: 'dist',

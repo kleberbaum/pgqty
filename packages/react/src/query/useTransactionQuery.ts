@@ -3,7 +3,7 @@ import {
   type BaseGeneratedSchema,
   type GQtyError,
   type RetryOptions,
-} from 'gqty';
+} from 'pgqty';
 import {
   translateFetchPolicy,
   type LegacyFetchPolicy,

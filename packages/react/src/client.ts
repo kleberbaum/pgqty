@@ -3,8 +3,8 @@ import {
   type BaseGeneratedSchema,
   type GQtyClient,
   type RetryOptions,
-} from 'gqty';
-import { getActivePromises } from 'gqty/Cache/query';
+} from 'pgqty';
+import { getActivePromises } from 'pgqty/Cache/query';
 import type { LegacyFetchPolicy } from './common';
 import { createUseMetaState, type UseMetaState } from './meta/useMetaState';
 import { createUseMutation, type UseMutation } from './mutation/useMutation';

@@ -6,7 +6,7 @@ import {
   type BaseGeneratedSchema,
   type GQtyClient,
   type QueryPayload,
-} from 'gqty';
+} from 'pgqty';
 import { parse, type ExecutionResult } from 'graphql';
 import { DateTimeISOResolver } from 'graphql-scalars';
 import type { Client, Sink, SubscribePayload } from 'graphql-ws';
@@ -280,12 +280,11 @@ export const createInMemoryClient = async <TSchema extends BaseGeneratedSchema>(
 
   // We cannot generate client schema on-the-fly because of circular dependency,
   // it has to be pre-generated.
-  // const { generate } = await import('@gqty/cli');
+  // const { generate } = await import('@pgqty/cli');
   // const { generatedSchema, scalarsEnumsHash } = await generate(schema);
 
-  const { generatedSchema, scalarsEnumsHash } = await import(
-    './schema.generated'
-  );
+  const { generatedSchema, scalarsEnumsHash } =
+    await import('./schema.generated');
 
   return createClient<TSchema>({
     schema: generatedSchema,

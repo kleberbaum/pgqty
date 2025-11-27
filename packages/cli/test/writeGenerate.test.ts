@@ -74,7 +74,7 @@ test('generates code and writes existing file', async () => {
 
       // This should be included
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -183,7 +183,7 @@ test('creates dir, generates code and writes new file', async () => {
 
       // This should be included
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -263,14 +263,14 @@ test('creates dir, generates code and writes new file', async () => {
        * GQty: You can safely modify this file based on your needs.
        */
 
-      import { createReactClient } from '@gqty/react';
-      import { createSolidClient } from '@gqty/solid';
+      import { createReactClient } from '@pgqty/react';
+      import { createSolidClient } from '@pgqty/solid';
       import {
         Cache,
         createClient,
         defaultResponseHandler,
         type QueryFetcher,
-      } from 'gqty';
+      } from 'pgqty';
       import {
         generatedSchema,
         scalarsEnumsHash,

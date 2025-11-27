@@ -3,16 +3,16 @@ import { getUserPackageManager } from './getUserPackageManager';
 export const getCommandName = () => {
   switch (getUserPackageManager()) {
     case 'npm': {
-      return 'npx @gqty/cli';
+      return 'npx @pgqty/cli';
     }
     case 'pnpm': {
-      return 'pnpm dlx @gqty/cli';
+      return 'pnpm dlx @pgqty/cli';
     }
     case 'yarn': {
-      return 'yarn dlx @gqty/cli';
+      return 'yarn dlx @pgqty/cli';
     }
     default: {
-      return 'gqty';
+      return 'pgqty';
     }
   }
 };

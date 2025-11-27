@@ -2,10 +2,10 @@
  * GQty: You can safely modify this file based on your needs.
  */
 
-import { createLogger } from '@gqty/logger';
-import { createReactClient } from '@gqty/react';
-import type { QueryFetcher } from 'gqty';
-import { Cache, GQtyError, createClient } from 'gqty';
+import { createLogger } from '@pgqty/logger';
+import { createReactClient } from '@pgqty/react';
+import type { QueryFetcher } from 'pgqty';
+import { Cache, GQtyError, createClient } from 'pgqty';
 import type { GeneratedSchema } from './schema.generated';
 import { generatedSchema, scalarsEnumsHash } from './schema.generated';
 

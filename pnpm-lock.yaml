@@ -86,18 +86,15 @@ importers:
 
   examples/gnt:
     dependencies:
-      '@gqty/logger':
-        specifier: workspace:^
-        version: link:../../packages/logger/dist
-      '@gqty/react':
-        specifier: workspace:^
-        version: link:../../packages/react/dist
       '@nhost/nextjs':
         specifier: ^2.2.3
         version: 2.2.3(@types/react@18.3.18)(next@15.1.7)(react-dom@18.3.1)(react@18.3.1)
-      gqty:
+      '@pgqty/logger':
         specifier: workspace:^
-        version: link:../../packages/gqty/dist
+        version: link:../../packages/logger/dist
+      '@pgqty/react':
+        specifier: workspace:^
+        version: link:../../packages/react/dist
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -107,6 +104,9 @@ importers:
       next:
         specifier: 15.1.7
         version: 15.1.7(@babel/core@7.26.9)(react-dom@18.3.1)(react@18.3.1)
+      pgqty:
+        specifier: workspace:^
+        version: link:../../packages/gqty/dist
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -114,12 +114,12 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@gqty/cli':
-        specifier: workspace:^
-        version: link:../../packages/cli/dist
       '@next/bundle-analyzer':
         specifier: ^15.1.7
         version: 15.1.7(bufferutil@4.0.9)
+      '@pgqty/cli':
+        specifier: workspace:^
+        version: link:../../packages/cli/dist
       '@tailwindcss/postcss':
         specifier: ^4.0.6
         version: 4.0.6
@@ -171,18 +171,6 @@ importers:
       '@faker-js/faker':
         specifier: ^9.5.0
         version: 9.5.0
-      '@gqty/cli':
-        specifier: workspace:^
-        version: link:../../packages/cli/dist
-      '@gqty/logger':
-        specifier: workspace:^
-        version: link:../../packages/logger/dist
-      '@gqty/react':
-        specifier: workspace:^
-        version: link:../../packages/react/dist
-      '@gqty/subscriptions':
-        specifier: workspace:^
-        version: link:../../packages/subscriptions/dist
       '@graphql-ez/fastify':
         specifier: ^0.12.1
         version: 0.12.1(@types/node@22.13.4)(fastify@4.29.0)(graphql-ez@0.16.1)(graphql@16.10.0)
@@ -204,6 +192,18 @@ importers:
       '@graphql-ez/plugin-websockets':
         specifier: ^0.11.3
         version: 0.11.3(@types/node@22.13.4)(bufferutil@4.0.9)(graphql-ez@0.16.1)(graphql@16.10.0)
+      '@pgqty/cli':
+        specifier: workspace:^
+        version: link:../../packages/cli/dist
+      '@pgqty/logger':
+        specifier: workspace:^
+        version: link:../../packages/logger/dist
+      '@pgqty/react':
+        specifier: workspace:^
+        version: link:../../packages/react/dist
+      '@pgqty/subscriptions':
+        specifier: workspace:^
+        version: link:../../packages/subscriptions/dist
       '@react-hookz/web':
         specifier: ^22.0.0
         version: 22.0.0(react-dom@18.3.1)(react@18.3.1)
@@ -216,9 +216,6 @@ importers:
       framer-motion:
         specifier: ^11.18.2
         version: 11.18.2(react-dom@18.3.1)(react@18.3.1)
-      gqty:
-        specifier: workspace:^
-        version: link:../../packages/gqty/dist
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -237,6 +234,9 @@ importers:
       node-json-db:
         specifier: ^2.3.1
         version: 2.3.1
+      pgqty:
+        specifier: workspace:^
+        version: link:../../packages/gqty/dist
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -292,10 +292,10 @@ importers:
 
   examples/solid:
     dependencies:
-      '@gqty/solid':
+      '@pgqty/solid':
         specifier: workspace:^
         version: link:../../packages/solid/dist
-      gqty:
+      pgqty:
         specifier: workspace:^
         version: link:../../packages/gqty/dist
       solid-js:
@@ -332,16 +332,16 @@ importers:
 
   examples/vite-react:
     dependencies:
-      '@gqty/cli':
+      '@pgqty/cli':
         specifier: workspace:^
         version: link:../../packages/cli/dist
-      '@gqty/react':
+      '@pgqty/react':
         specifier: workspace:^
         version: link:../../packages/react/dist
       '@react-hookz/web':
         specifier: ^24.0.4
         version: 24.0.4(react-dom@18.3.1)(react@18.3.1)
-      gqty:
+      pgqty:
         specifier: workspace:^
         version: link:../../packages/gqty/dist
       react:
@@ -396,9 +396,6 @@ importers:
       fastify:
         specifier: ^4.29.0
         version: 4.29.0
-      gqty:
-        specifier: workspace:^
-        version: link:../../packages/gqty/dist
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -420,6 +417,9 @@ importers:
       jest-watch-typeahead:
         specifier: ^2.2.2
         version: 2.2.2(jest@29.7.0)
+      pgqty:
+        specifier: workspace:^
+        version: link:../../packages/gqty/dist
       wait-for-expect:
         specifier: ^3.0.2
         version: 3.0.2
@@ -472,9 +472,6 @@ importers:
       fast-glob:
         specifier: ^3.3.3
         version: 3.3.3
-      gqty:
-        specifier: workspace:^
-        version: link:../gqty/dist
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -484,6 +481,9 @@ importers:
       micromatch:
         specifier: ^4.0.8
         version: 4.0.8
+      pgqty:
+        specifier: workspace:^
+        version: link:../gqty/dist
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
@@ -636,12 +636,12 @@ importers:
       bob-esbuild-cli:
         specifier: ^4.0.0
         version: 4.0.0(bob-esbuild@4.0.3)
-      gqty:
-        specifier: workspace:^
-        version: link:../gqty/dist
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.13.4)(ts-node@10.9.2)
+      pgqty:
+        specifier: workspace:^
+        version: link:../gqty/dist
       test-utils:
         specifier: workspace:^
         version: link:../../internal/test-utils
@@ -719,9 +719,6 @@ importers:
       eslint-plugin-you-dont-need-lodash-underscore:
         specifier: ^6.14.0
         version: 6.14.0
-      gqty:
-        specifier: workspace:^
-        version: link:../gqty/dist
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -740,6 +737,9 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      pgqty:
+        specifier: workspace:^
+        version: link:../gqty/dist
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -765,12 +765,12 @@ importers:
       debounce-microtasks:
         specifier: ^0.1.8
         version: 0.1.8
-      gqty:
-        specifier: workspace:^3.4.1
-        version: link:../gqty/dist
       p-defer:
         specifier: ^3.0.0
         version: 3.0.0
+      pgqty:
+        specifier: workspace:^3.4.1
+        version: link:../gqty/dist
       solid-js:
         specifier: ^1.9.4
         version: 1.9.4
@@ -825,12 +825,12 @@ importers:
       bob-esbuild-cli:
         specifier: ^4.0.0
         version: 4.0.0(bob-esbuild@4.0.3)
-      gqty:
-        specifier: workspace:^
-        version: link:../gqty/dist
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
+      pgqty:
+        specifier: workspace:^
+        version: link:../gqty/dist
       test-utils:
         specifier: workspace:^
         version: link:../../internal/test-utils

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { useGenerateGQty } from '@gqty/cli/envelop';
+import { useGenerateGQty } from '@pgqty/cli/envelop';
 import { CreateApp } from '@graphql-ez/fastify';
 import { ezAltairIDE } from '@graphql-ez/plugin-altair/static';
 import { ezCodegen } from '@graphql-ez/plugin-codegen';
@@ -91,7 +91,8 @@ const HumanDogsLoader = registerDataLoader('HumanDogs', (DataLoader) => {
 
 declare module 'graphql-ez' {
   interface EZContext
-    extends InferDataLoader<typeof OwnerLoader>,
+    extends
+      InferDataLoader<typeof OwnerLoader>,
       InferDataLoader<typeof HumanDogsLoader> {}
 }
 

@@ -1,4 +1,4 @@
-import { PropsWithServerCache } from '@gqty/react';
+import { PropsWithServerCache } from '@pgqty/react';
 import type { GetServerSideProps } from 'next';
 import {
   graphql,

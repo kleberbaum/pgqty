@@ -1,5 +1,5 @@
-import { createLogger } from '@gqty/logger';
-import { createReactClient } from '@gqty/react';
+import { createLogger } from '@pgqty/logger';
+import { createReactClient } from '@pgqty/react';
 import { cache, client, GeneratedSchema } from '../graphql/gqty';
 
 export const {

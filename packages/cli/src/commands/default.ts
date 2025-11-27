@@ -63,7 +63,7 @@ export const addCommand = (command: Command) => {
       false
     )
     .action(async (argv: string[], options) => {
-      const config: GQtyConfig = await cosmiconfig('gqty')
+      const config: GQtyConfig = await cosmiconfig('pgqty')
         .search()
         .then((result) => result?.config ?? {});
 
@@ -172,13 +172,13 @@ export const addCommand = (command: Command) => {
         ));
 
         config.destination ??= await promptTarget(
-          config.javascriptOutput ? 'gqty/index.js' : 'gqty/index.ts'
+          config.javascriptOutput ? 'pgqty/index.js' : 'pgqty/index.ts'
         );
       }
 
       config.destination ??= config.javascriptOutput
-        ? 'gqty/index.js'
-        : 'gqty/index.ts';
+        ? 'pgqty/index.js'
+        : 'pgqty/index.ts';
 
       if (isURL(endpoints[0])) {
         config.endpoint = endpoints[0];

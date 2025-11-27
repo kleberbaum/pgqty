@@ -58,14 +58,14 @@ test('basic inspectWriteGenerate functionality', async () => {
        * GQty: You can safely modify this file based on your needs.
        */
 
-      import { createReactClient } from '@gqty/react';
-      import { createSolidClient } from '@gqty/solid';
+      import { createReactClient } from '@pgqty/react';
+      import { createSolidClient } from '@pgqty/solid';
       import {
         Cache,
         createClient,
         defaultResponseHandler,
         type QueryFetcher,
-      } from 'gqty';
+      } from 'pgqty';
       import {
         generatedSchema,
         scalarsEnumsHash,
@@ -164,7 +164,7 @@ test('basic inspectWriteGenerate functionality', async () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -276,14 +276,14 @@ describe('from file', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -378,7 +378,7 @@ describe('from file', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -493,14 +493,14 @@ describe('from file', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -595,7 +595,7 @@ describe('from file', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -709,14 +709,14 @@ describe('from file', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -811,7 +811,7 @@ describe('from file', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -969,14 +969,14 @@ describe('from multiple files', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -1071,7 +1071,7 @@ describe('from multiple files', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -1245,14 +1245,14 @@ test('specify generateOptions to inspectWriteGenerate', async () => {
        * GQty: You can safely modify this file based on your needs.
        */
 
-      import { createReactClient } from '@gqty/react';
-      import { createSolidClient } from '@gqty/solid';
+      import { createReactClient } from '@pgqty/react';
+      import { createSolidClient } from '@pgqty/solid';
       import {
         Cache,
         createClient,
         defaultResponseHandler,
         type QueryFetcher,
-      } from 'gqty';
+      } from 'pgqty';
       import {
         generatedSchema,
         scalarsEnumsHash,
@@ -1349,7 +1349,7 @@ test('specify generateOptions to inspectWriteGenerate', async () => {
 
       // This should be included
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -1487,7 +1487,7 @@ describe('inspect headers', () => {
 
         // This should be included
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;
@@ -1622,14 +1622,14 @@ describe('CLI behavior', () => {
          * GQty: You can safely modify this file based on your needs.
          */
 
-        import { createReactClient } from '@gqty/react';
-        import { createSolidClient } from '@gqty/solid';
+        import { createReactClient } from '@pgqty/react';
+        import { createSolidClient } from '@pgqty/solid';
         import {
           Cache,
           createClient,
           defaultResponseHandler,
           type QueryFetcher,
-        } from 'gqty';
+        } from 'pgqty';
         import {
           generatedSchema,
           scalarsEnumsHash,
@@ -1728,7 +1728,7 @@ describe('CLI behavior', () => {
          * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
          */
 
-        import { type ScalarsEnumsHash } from 'gqty';
+        import { type ScalarsEnumsHash } from 'pgqty';
 
         export type Maybe<T> = T | null;
         export type InputMaybe<T> = Maybe<T>;

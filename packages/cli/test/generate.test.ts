@@ -44,7 +44,7 @@ test('basic functionality works', async () => {
 
     // This should be included
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -137,15 +137,15 @@ test('basic functionality works', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import { createClient as createSubscriptionsClient } from 'graphql-ws';
     import {
       Cache,
       createClient,
       defaultResponseHandler,
       type QueryFetcher,
-    } from 'gqty';
+    } from 'pgqty';
     import {
       generatedSchema,
       scalarsEnumsHash,
@@ -315,14 +315,14 @@ test('custom scalars works', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import {
       Cache,
       createClient,
       defaultResponseHandler,
       type QueryFetcher,
-    } from 'gqty';
+    } from 'pgqty';
     import {
       generatedSchema,
       scalarsEnumsHash,
@@ -417,7 +417,7 @@ test('custom scalars works', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -603,7 +603,7 @@ describe('feature complete app', () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { SchemaUnionsKey, type ScalarsEnumsHash } from 'gqty';
+      import { SchemaUnionsKey, type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -1127,7 +1127,7 @@ describe('mutation', () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -1269,7 +1269,7 @@ describe('subscription', () => {
        * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
        */
 
-      import { type ScalarsEnumsHash } from 'gqty';
+      import { type ScalarsEnumsHash } from 'pgqty';
 
       export type Maybe<T> = T | null;
       export type InputMaybe<T> = Maybe<T>;
@@ -1417,14 +1417,14 @@ test('javascript output works', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import { createClient as createSubscriptionsClient } from 'graphql-ws';
-    import { Cache, createClient, defaultResponseHandler } from 'gqty';
+    import { Cache, createClient, defaultResponseHandler } from 'pgqty';
     import { generatedSchema, scalarsEnumsHash } from './schema.generated';
 
     /**
-     * @type {import("gqty").QueryFetcher}
+     * @type {import("pgqty").QueryFetcher}
      */
     const queryFetcher = async function (
       { query, variables, operationName },
@@ -1475,7 +1475,7 @@ test('javascript output works', async () => {
     );
 
     /**
-     * @type {import("gqty").GQtyClient<import("./schema.generated").GeneratedSchema>}
+     * @type {import("pgqty").GQtyClient<import("./schema.generated").GeneratedSchema>}
      */
     export const client = createClient({
       schema: generatedSchema,
@@ -1516,7 +1516,7 @@ test('javascript output works', async () => {
       useSubscription,
     } =
       /**
-       * @type {import("@gqty/react").ReactClient<import("./schema.generated").GeneratedSchema>}
+       * @type {import("@pgqty/react").ReactClient<import("./schema.generated").GeneratedSchema>}
        */
       createReactClient(client, {
         defaults: {
@@ -1536,10 +1536,10 @@ test('javascript output works', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { SchemaUnionsKey } from 'gqty';
+    import { SchemaUnionsKey } from 'pgqty';
 
     /**
-     * @type {import("gqty").ScalarsEnumsHash}
+     * @type {import("pgqty").ScalarsEnumsHash}
      */
     export const scalarsEnumsHash = { Boolean: true, Int: true, String: true };
 
@@ -1613,7 +1613,7 @@ test('javascript output works', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { SchemaUnionsKey } from 'gqty';
+    import { SchemaUnionsKey } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -1747,14 +1747,14 @@ test('ignoreArgs transform', async () => {
      * GQty: You can safely modify this file based on your needs.
      */
 
-    import { createReactClient } from '@gqty/react';
-    import { createSolidClient } from '@gqty/solid';
+    import { createReactClient } from '@pgqty/react';
+    import { createSolidClient } from '@pgqty/solid';
     import {
       Cache,
       createClient,
       defaultResponseHandler,
       type QueryFetcher,
-    } from 'gqty';
+    } from 'pgqty';
     import {
       generatedSchema,
       scalarsEnumsHash,
@@ -1871,7 +1871,7 @@ test('ignoreArgs transform', async () => {
      */
 
     /**
-     * @type {import("gqty").ScalarsEnumsHash}
+     * @type {import("pgqty").ScalarsEnumsHash}
      */
     export const scalarsEnumsHash = { Boolean: true, Int: true, String: true };
 
@@ -1891,7 +1891,7 @@ test('ignoreArgs transform', async () => {
      * GQty AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
      */
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;
@@ -2120,7 +2120,7 @@ test('fields with default value works', async () => {
 
     // This should be included
 
-    import { type ScalarsEnumsHash } from 'gqty';
+    import { type ScalarsEnumsHash } from 'pgqty';
 
     export type Maybe<T> = T | null;
     export type InputMaybe<T> = Maybe<T>;

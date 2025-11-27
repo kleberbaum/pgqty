@@ -48,7 +48,7 @@ export interface FilterLocation {
   type?: InputMaybe<Scalars['String']>;
 }
 
-export const scalarsEnumsHash: import('gqty').ScalarsEnumsHash = {
+export const scalarsEnumsHash: import('pgqty').ScalarsEnumsHash = {
   Boolean: true,
   CacheControlScope: true,
   ID: true,

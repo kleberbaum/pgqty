@@ -7,7 +7,7 @@ test('completely valid config', () => {
 
   try {
     getValidConfig({
-      destination: './gqty',
+      destination: './pgqty',
       enumsAsStrings: true,
       introspection: {
         headers: {
@@ -40,7 +40,7 @@ test('completely invalid config', () => {
       switch (++nCall) {
         case 1:
           expect(message).toMatchInlineSnapshot(
-            `"Warning, invalid config destination, got: 123, expected string. "./src/gqty/index.ts" used instead."`
+            `"Warning, invalid config destination, got: 123, expected string. "./src/pgqty/index.ts" used instead."`
           );
           break;
         case 2:
@@ -122,7 +122,7 @@ test('completely invalid config', () => {
                 "headers": {}
               },
               "endpoint": "/api/graphql",
-              "destination": "./src/gqty/index.ts",
+              "destination": "./src/pgqty/index.ts",
               "subscriptions": false,
               "javascriptOutput": false,
               "enumStyle": "enum",
