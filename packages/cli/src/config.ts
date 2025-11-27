@@ -294,7 +294,7 @@ export const loadOrGenerateConfig = async ({
         const loaders = {
           '.cjs': cjsLoader,
           '.js': cjsLoader,
-        } satisfies deps.Loaders;
+        } satisfies Record<string, deps.Loader>;
 
         const config =
           (await deps
