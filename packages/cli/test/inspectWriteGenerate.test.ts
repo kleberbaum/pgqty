@@ -229,6 +229,32 @@ test('basic inspectWriteGenerate functionality', async () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {},
+        Query: {},
+      };
       "
     `);
   } finally {
@@ -444,6 +470,32 @@ describe('from file', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -660,6 +712,32 @@ describe('from file', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -876,6 +954,32 @@ describe('from file', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -1111,8 +1215,8 @@ describe('from multiple files', () => {
           mutation: {},
           query: {
             __typename: { __type: 'String!' },
-            bar: { __type: 'Int!' },
             foo: { __type: 'Int!' },
+            bar: { __type: 'Int!' },
           },
           subscription: {},
         } as const;
@@ -1123,8 +1227,8 @@ describe('from multiple files', () => {
 
         export interface Query {
           __typename?: 'Query';
-          bar: ScalarsEnums['Int'];
           foo: ScalarsEnums['Int'];
+          bar: ScalarsEnums['Int'];
         }
 
         export interface Subscription {
@@ -1142,6 +1246,32 @@ describe('from multiple files', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {
@@ -1414,6 +1544,32 @@ test('specify generateOptions to inspectWriteGenerate', async () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {},
+        Query: {},
+      };
       "
     `);
 
@@ -1552,6 +1708,32 @@ describe('inspect headers', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
 
@@ -1793,6 +1975,32 @@ describe('CLI behavior', () => {
             ? Scalars[Key]['output']
             : never;
         } & {};
+
+        /**
+         * Contains code for parameter to argument conversion.
+         */
+
+        export function convertParamsToArgsFn<T>(
+          argNames: string[],
+          params: unknown[]
+        ): T {
+          const result: Record<string, unknown> = {};
+
+          argNames.forEach((key, index) => {
+            const value = params[index];
+            // Only set the property if it's not undefined
+            if (value !== undefined) {
+              result[key] = value;
+            }
+          });
+
+          return result as T;
+        }
+
+        export const convertParamsToArgs = {
+          Mutation: {},
+          Query: {},
+        };
         "
       `);
     } finally {

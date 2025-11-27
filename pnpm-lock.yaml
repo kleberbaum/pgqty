@@ -768,9 +768,6 @@ importers:
       p-defer:
         specifier: ^3.0.0
         version: 3.0.0
-      pgqty:
-        specifier: workspace:^3.4.1
-        version: link:../gqty/dist
       solid-js:
         specifier: ^1.9.4
         version: 1.9.4
@@ -790,6 +787,9 @@ importers:
       jsdom:
         specifier: ^26.0.0
         version: 26.0.0(bufferutil@4.0.9)
+      pgqty:
+        specifier: workspace:^
+        version: link:../gqty/dist
       test-utils:
         specifier: workspace:^
         version: link:../../internal/test-utils

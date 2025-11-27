@@ -139,6 +139,32 @@ test('generates code and writes existing file', async () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {},
+        Query: {},
+      };
       "
     `);
   } finally {
@@ -248,6 +274,32 @@ test('creates dir, generates code and writes new file', async () => {
           ? Scalars[Key]['output']
           : never;
       } & {};
+
+      /**
+       * Contains code for parameter to argument conversion.
+       */
+
+      export function convertParamsToArgsFn<T>(
+        argNames: string[],
+        params: unknown[]
+      ): T {
+        const result: Record<string, unknown> = {};
+
+        argNames.forEach((key, index) => {
+          const value = params[index];
+          // Only set the property if it's not undefined
+          if (value !== undefined) {
+            result[key] = value;
+          }
+        });
+
+        return result as T;
+      }
+
+      export const convertParamsToArgs = {
+        Mutation: {},
+        Query: {},
+      };
       "
     `);
 
